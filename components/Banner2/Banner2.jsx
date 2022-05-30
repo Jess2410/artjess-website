@@ -4,11 +4,11 @@
 // import img2 from './../../public/images/img2.jpg'
 // import img3 from './../../public/images/img3.jpg'
 // import img4 from './../../public/images/img4.jpg'
-// import './Banner2.module.css'
+// import styles from './Banner2.module.css'
 
 // export default function Banner2() {
 //   return (
-//     <div className="container">
+//     <div className={styles.container}>
 //         <div className="box" >
 //             <div className="imgBx">
 //                 <Image src={img1} alt="frozen"  layout="fill" />
