@@ -14,12 +14,6 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Header/>
-      <About/>
-      <Transition/>
-      <Services/>
-      <Gallery/>
-      <Contact/>
-      
     </div>
   )
 }

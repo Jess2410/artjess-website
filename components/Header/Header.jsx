@@ -3,6 +3,8 @@ import Image from 'next/image'
 import menu from '/public/images/menu.png'
 import close from '/public/images/close.png'
 import './Header.module.css'
+import Navbar from '../Navbar/Navbar'
+import Link from 'next/link'
 
 export default function Header() {
 
@@ -16,23 +18,17 @@ export default function Header() {
   return (
 
        <header className="header">
-         <div className='navbar'>
-            <a href="#" className="logo"></a>
-            <div className={isActive ? "toggle" : "active"} onClick={ToggleClass }>
-                <Image src={isActive ? menu : close} width={25} height={25} alt="icon"/>
-            </div>
-            <ul className="navigation">
-                <li><a href="#" >Home</a></li>
-                <li><a href="#about" >About</a></li>
-                <li><a href="#gallery" >Gallery</a></li>
-                <li><a href="#shop" >Shop</a></li>
-                <li><a href="#contact" >Contact</a></li>
-            </ul>
-          </div>
+         <Navbar/>
           <div className="banner" id="home">
-            <h2><span>Jess</span></h2>
-            <h3>Illustrations<br/><span>Digital Painting</span></h3>
-            <a href="">Enter</a>
+            <div className="banner-text">
+              <div className="row">
+                <h2><span>ART</span> Of </h2>
+                <div className='sign'></div>
+              </div>
+              <Link href="/gallery"><a className='btn-ghost' >Enter</a></Link>
+              <a  href="https://www.instagram.com/art.jess2410" target="_blank" rel='noreferrer'>Follow me on Instagram</a>
+            </div>
+            
             {/* <Image src={bgjess} alt="background"  layout="fill" /> */}
         </div>
         </header>

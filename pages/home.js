@@ -1,8 +1,0 @@
-// import '../styles/style.css'
-import React from 'react'
-
-export default function home() {
-  return (
-    <div>home page</div>
-  )
-}

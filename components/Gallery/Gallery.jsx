@@ -23,13 +23,15 @@ const imagesBoxData = [
 
 export default function Gallery() {
   return (
+    <>
+      <div className="line"></div>
     <div className={styles.gallery}>
-      <h3 className="title">Gallery</h3>
       <section className={styles.gallery_content}>
         {imagesBoxData.map((img, index) => {
           return <ImageBox key={index} img={img.src} alt={img.alt} />;
         })}
       </section>
     </div>
+    </>
   );
 }

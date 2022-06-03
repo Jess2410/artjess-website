@@ -1,25 +1,32 @@
 import React from 'react'
 import Image from 'next/image'
-import facebook from './../../public/images/facebook.png'
+import facebook from './../../public/images/facebook.svg'
+import instagram from './../../public/images/instagram.svg'
+import linkedin from './../../public/images/linkedin.svg'
 import styles from "./Contact.module.css";
+import Link from 'next/link'
 
 
 export default function Contact() {
   return (
+      <>
+      <div className="line"></div>
     <section className={styles.contact} id="contact">
     <div className={styles.content}>
-        <div className={styles.mxw800p}>
-            <h3 className={styles.title}>Contact</h3>
-            <p>Pour tout renseignement complémentaire, n&rsquo;hésitez pas à me contacter</p>
-        </div>
+        
         <div className={styles.contactForm}>
             <form>
                 <div className={styles.row100}>
                     <div className={styles.inputBx50}>
-                        <input type="text" name="" placeholder="Full Name"/>
+                        <input type="text" name="" placeholder="Last Name"/>
                     </div>
                     <div className={styles.inputBx50}>
-                        <input type="mail" name="" placeholder="Email Address"/>
+                        <input type="mail" name="" placeholder="First Name"/>
+                    </div>
+                </div>
+                <div className={styles.row100}>
+                    <div className={styles.inputBx100}>
+                    <input type="mail" name="" placeholder="Email Address"/>
                     </div>
                 </div>
                 <div className={styles.row100}>
@@ -28,20 +35,44 @@ export default function Contact() {
                     </div>
                 </div>
                 <div className={styles.row100}>
-                    <div className={styles.inputBx100}>
-                        <input type="submit" name="" value="Send"/>
+                    <div className={styles.inputBx100 }>
+                        <div className={styles.center}>
+                            <input type="submit" name="" value="Send"/>
+                        </div>
                     </div>
                 </div>
             </form>
         </div>
-        <div className={styles.sci}>
-            <ul>
-                <li><a href="#"><Image src={facebook} alt="fb"/></a></li>
-                <li><a href="#"><Image src={facebook} alt="fb"/></a></li>
-                <li><a href="#"><Image src={facebook} alt="fb"/></a></li>
-            </ul>
-        </div>
-    </div>
+    </div>                  
 </section> 
+    <footer className={styles.footer}>
+      <p className={styles.footer}>2022 - Jessica TOUNKARA</p>
+      <div className={styles.sci}>
+        <ul>
+            <li>
+                <Link href="#">
+                    <a> 
+                        <Image src={instagram} width={30} height={30} alt="instagram"/>
+                    </a>
+                </Link>
+            </li>
+            <li>
+                <Link href="#">
+                    <a> 
+                        <Image src={linkedin} width={30} height={30} alt="linkedin"/>
+                    </a>
+                </Link>
+            </li>
+            <li>
+                <Link href="#">
+                    <a> 
+                        <Image src={facebook} width={30} height={30} alt="facebook"/>
+                    </a>
+                </Link>
+            </li>
+        </ul>
+      </div>
+    </footer>
+</>
   )
 }
