@@ -1,12 +1,15 @@
 import React from 'react'
-import Dashboard_Navbar from '../components/Dashboard_Navbar/Dashboard_Navbar.jsx'
+import Dashboard_Sidebar from '../components/Dashboard_Sidebar/Dashboard_Sidebar.jsx'
+import Dashboard from '../components/Dashboard/Dashboard.jsx'
 import Layout from '../components/Layout/Layout'
 
-export default function about() {
+export default function dashboard() {
   return (
     <div>
       <Layout title="Dashboard">
-         <Dashboard_Navbar/>
+          
+        <Dashboard_Sidebar />
+        <Dashboard/>
       </Layout>
        
     </div>

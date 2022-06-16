@@ -277,7 +277,7 @@ a:hover{
         padding: 10px 20px;
         height: 70px;
     }
-    .navigation{
+    /* .navigation{
         position : fixed;
         top : 0 ;
         left: 0;
@@ -295,6 +295,7 @@ a:hover{
         display : inline-block;
         letter-spacing: 1px;
         font-size: 20px;
-    }}
+    } */
+}
 
     
