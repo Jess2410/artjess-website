@@ -1,6 +1,7 @@
 import React from 'react'
 import Shop from '../components/Shop/Shop.jsx'
 import Layout from '../components/Layout/Layout'
+import Footer from '../components/Footer/Footer.jsx'
 
 export default function shop() {
   return (
@@ -8,6 +9,7 @@ export default function shop() {
       <Layout title="Shop">
          <Shop/>
       </Layout>
+      <Footer/>
        
     </div>
   )

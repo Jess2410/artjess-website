@@ -1,15 +1,16 @@
 import React from 'react'
-import Contact from '../components/Contact/Contact.jsx'
+import Connexion from '../components/Connexion/Connexion.jsx'
 import Footer from '../components/Footer/Footer.jsx'
 import Layout from '../components/Layout/Layout'
 
 export default function about() {
   return (
     <div>
-      <Layout title="Contact">
-         <Contact/>
+      <Layout title="Connexion ">
+         <Connexion/>
       </Layout>
       <Footer/>
+       
     </div>
   )
 }
