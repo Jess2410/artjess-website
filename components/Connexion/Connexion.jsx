@@ -27,14 +27,16 @@ export default function Connexion() {
                     <div className={styles.inputBx100 }>
                         <div className={styles.center}>
                             <div>
-                                <input type="submit" name="" value="Send"/>
+                                <input type="submit" name="" value="Se connecter"/>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div className={styles.center}>
                 <span className={styles.span}>Vous n&rsquo;avez pas de compte ? </span> 
+                <br />
                 <Link href={"/subscription"}><a className={styles.a}>Inscrivez-vous</a></Link>
-                
+                </div>
             </form>
             
         </div>
