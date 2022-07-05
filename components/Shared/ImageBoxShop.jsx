@@ -1,7 +1,9 @@
 import Image from "next/image";
 import styles from "./../../components/Shop/Shop.module.css";
+import {useRouter} from "next/router"
 
-export const ImageBoxShop = ({ img, alt, title, price }) => {
+export const ImageBoxShop = ({ img, alt, title, price, id, slug }) => {
+const router = useRouter()
   return (
     <div className="box">
       <div className="iconBx">
@@ -9,6 +11,7 @@ export const ImageBoxShop = ({ img, alt, title, price }) => {
       </div>
         <h2 className={styles.title}>{title}</h2>
         <h3 className={styles.price}>$ {price}</h3>
+        <button onClick={()=>router.push(`/products/${img.id}`)}>Voir</button>
     </div>
   );
 };
