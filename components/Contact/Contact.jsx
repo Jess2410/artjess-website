@@ -1,10 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import styles from "./Contact.module.css";
+import { toast } from "react-toastify";
 import Link from 'next/link'
+import axios from 'axios'
+import { BASE_URI } from '../../public/assets/app.config';
 
+
+const initMessage = {
+    lastname: "",
+    firstname: "",
+    email : "",
+    message : "",
+    read: false,
+  }
 
 export default function Contact() {
+
+    const [message, setMessage] = useState(initMessage);
+      console.log("🚀 ~ file: App.js ~ line 48 ~ App ~ message", message);
+    
+      const handleChange = (e) => {
+        const { name, value } = e.target;
+        setMessage({ ...message, [name]: value });
+      };
+    
+      const handleCreateMessage = (e) => {
+        e.preventDefault();
+        const loader = toast.loading("Veuillez patienter...");
+        axios
+          .post(`${BASE_URI}/message/add`, message)
+          .then((res) => {
+            toast.update(loader, {
+              render: "Message envoyé avec succès !",
+              type: "success",
+              autoClose: 3000,
+              isLoading: false,
+            });
+            setMessage(initMessage);
+          })
+          .catch((err) => {
+            toast.update(loader, {
+              render: "Une erreur est survenue !",
+              type: "error",
+              autoClose: 3000,
+              isLoading: false,
+            });
+          });
+      };
+
+
   return (
       <div className={styles.wrapper}>
       <div className="line"></div>
@@ -12,29 +57,35 @@ export default function Contact() {
     <div className={styles.content}>
         
         <div className={styles.contactForm}>
-            <form>
+            <form onSubmit={handleCreateMessage}>
                 <div className={styles.row100}>
                     <div className={styles.inputBx50}>
-                        <input type="text" name="" placeholder="Last Name"/>
+                        <input type="text" name="lastname" placeholder="Last Name" onChange={handleChange}
+                        value={message?.lastname}/>
                     </div>
                     <div className={styles.inputBx50}>
-                        <input type="mail" name="" placeholder="First Name"/>
+                        <input type="text" name="firstname" placeholder="First Name" onChange={handleChange}
+                        value={message?.firstname}/>
                     </div>
                 </div>
                 <div className={styles.row100}>
                     <div className={styles.inputBx100}>
-                    <input type="mail" name="" placeholder="Email Address"/>
+                    <input type="email" name="email" placeholder="Email Address" onChange={handleChange}
+                        value={message?.email}/>
                     </div>
                 </div>
                 <div className={styles.row100}>
                     <div className={styles.inputBx100}>
-                        <textarea placeholder="Message"></textarea>
+                        <textarea placeholder="Message" name="message"
+                        onChange={handleChange}
+                        value={message?.message}
+                        ></textarea>
                     </div>
                 </div>
                 <div className={styles.row100}>
                     <div className={styles.inputBx100 }>
                         <div className={styles.center}>
-                            <input type="submit" name="" value="Send"/>
+                            <button type="submit" >SEND</button>
                         </div>
                     </div>
                 </div>

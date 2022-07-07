@@ -57,7 +57,7 @@
 .contactForm .row100 textarea::placeholder{
     color: rgba(255,255,255,0.5);
 }
-.contactForm .row100 input[type="submit"]{
+.contactForm .row100 button{
     background: #fff;
     color: #000;
     max-width: 100px;

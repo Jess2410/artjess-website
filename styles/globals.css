@@ -175,6 +175,9 @@ padding: 100px;
     align-items: center;
 }
 
-/* section{
-    min-height: 69.10vh;
-} */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+background-color: #DA727B !important;
+}
