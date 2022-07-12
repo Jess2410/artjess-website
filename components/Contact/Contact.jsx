@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import Image from 'next/image'
 import styles from "./Contact.module.css";
 import { toast } from "react-toastify";
-import Link from 'next/link'
 import axios from 'axios'
 import { BASE_URI } from '../../public/assets/app.config';
 
@@ -14,11 +12,11 @@ const initMessage = {
     message : "",
     read: false,
   }
+console.log("🚀 ~ file: Contact.jsx ~ line 15 ~ initMessage", initMessage)
 
 export default function Contact() {
 
     const [message, setMessage] = useState(initMessage);
-      console.log("🚀 ~ file: App.js ~ line 48 ~ App ~ message", message);
     
       const handleChange = (e) => {
         const { name, value } = e.target;

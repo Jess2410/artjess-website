@@ -181,3 +181,7 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active  {
 background-color: #DA727B !important;
 }
+/* .essai{
+    display: flex;
+    flex-direction: row;
+} */
