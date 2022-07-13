@@ -36,7 +36,7 @@ export default function Dashboard_Navbar() {
         <h3 className={styles.title}>Services</h3>
         <li className={styles.li}>   
             <Image src="/images/messages.svg" alt="icon" width={30} height={30} />
-            <Link href="/messages" >
+            <Link href="dashboard_messages" >
                 <a className={styles.link}>Messages</a>
             </Link>
         </li>

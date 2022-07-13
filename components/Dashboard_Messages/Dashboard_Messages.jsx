@@ -8,6 +8,7 @@ import { useCallback } from 'react';
 import { useEffect } from 'react';
 import axios from "axios";
 import { BASE_URI } from '../../public/assets/app.config';
+import { toast } from "react-toastify";
 
 
 
@@ -15,8 +16,6 @@ export default function Dashboard() {
 
 
   const [messages, setMessages] = useState([]);
-  console.log("🚀 ~ file: Dashboard_Messages.jsx ~ line 17 ~ Dashboard ~ messages", messages)
-
   const [loading, setLoading] = useState(false);
 
   const getMessages = useCallback(() => {
@@ -33,12 +32,34 @@ export default function Dashboard() {
       });
     setLoading(false);
   }, []);
-  console.log("🚀 ~ file: Dashboard_Messages.jsx ~ line 34 ~ getMessages ~ getMessages", getMessages)
 
   useEffect(() => {
     getMessages();
   }, [getMessages]);
 
+  const handleDeleteMessage = (id) => {
+  console.log("🚀 ~ file: Dashboard_Messages.jsx ~ line 41 ~ handleDeleteMessage ~ id", id)
+    const loader = toast.loading("Veuillez patienter...");
+    axios
+      .put(`${BASE_URI}/messages/delete/${id}`)
+      .then((res) => {
+        getMessages();
+        toast.update(loader, {
+          render: res.data?.message,
+          type: "success",
+          autoClose: 3000,
+          isLoading: false,
+        });
+      })
+      .catch((err) => {
+        toast.update(loader, {
+          render: "Une erreur est survenue !",
+          type: "error",
+          autoClose: 3000,
+          isLoading: false,
+        });
+      });
+  };
 
   return (
   
@@ -65,12 +86,10 @@ export default function Dashboard() {
             <td>{message.email}</td>
             <td>{message.message}</td>
             <td>{message.createdAt}</td>
-            <td><button>Supprimer</button></td>
+            <td><button onClick={() => handleDeleteMessage(message?._id)} >Supprimer</button></td>
             </tr>
             </>
             ))}
-     
-            {console.log("🚀 ~ file: Dashboard_Messages.jsx ~ line 57 ~ Dashboard ~ message", messages)}
               </tbody>
             {/* </Table> */}
             </table>
