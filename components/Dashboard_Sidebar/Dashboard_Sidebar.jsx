@@ -29,7 +29,7 @@ export default function Dashboard_Navbar() {
         </li>
         <li className={styles.li}>   
             <Image src="/images/customers.svg" alt="icon" width={30} height={30} />
-            <Link href="/customers" >
+            <Link href="/dashboard_customers" >
                 <a className={styles.link}>Customers</a>
             </Link>
         </li>
