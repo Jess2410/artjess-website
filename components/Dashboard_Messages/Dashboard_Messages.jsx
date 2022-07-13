@@ -2,14 +2,12 @@ import React from 'react'
 import Image from 'next/image'
 import styles from './Dashboard_Messages.module.css'
 import Link from 'next/link'
-// import Table from 'react-bootstrap/Table';
 import { useState } from 'react';
 import { useCallback } from 'react';
 import { useEffect } from 'react';
 import axios from "axios";
 import { BASE_URI } from '../../public/assets/app.config';
 import { toast } from "react-toastify";
-
 
 
 export default function Dashboard() {
@@ -64,34 +62,34 @@ export default function Dashboard() {
   return (
   
         <div className={styles.table}>
-<table>
-            {/* <Table> */}
+            <table className={styles.table}>
               <thead>
                 <tr>
-                  <th>Nom</th>
-                  <th>Prénom</th>
-                  <th>Email</th>
-                  <th>Message</th>
-                  <th>Reçu le</th>
-                  <th>Action</th>
+                  <th className={styles.th}>Nom</th>
+                  <th className={styles.th}>Prénom</th>
+                  <th className={styles.th}>Email</th>
+                  <th className={styles.th}>Message</th>
+                  <th className={styles.th}>Reçu le</th>
+                  <th className={styles.th}>Action</th>
                 </tr>
               </thead>
               <tbody>
-            
           {messages.map((message) => (
-            <>
-            <tr key={message._id}>
-            <td>{message.lastname}</td>
-            <td>{message.firstname}</td>
-            <td>{message.email}</td>
-            <td>{message.message}</td>
-            <td>{message.createdAt}</td>
-            <td><button onClick={() => handleDeleteMessage(message?._id)} >Supprimer</button></td>
+
+            <tr className={styles.tr} key={message._id}>
+              <td className={styles.td_left}>{message.lastname}</td>
+              <td className={styles.td_left}>{message.firstname}</td>
+              <td className={styles.td_left}>{message.email}</td>
+              <td className={styles.td_left}>{message.message}</td>
+              <td className={styles.td_center}>{message.createdAt}</td>
+              <td className={styles.td_center}>
+                <button className={styles.buttonNone} onClick={() => handleDeleteMessage(message?._id)}>
+                  <Image src="/images/trashIcon.svg" alt="icon" width={30} height={30} />
+                </button>
+              </td>
             </tr>
-            </>
             ))}
               </tbody>
-            {/* </Table> */}
             </table>
         </div>
 
