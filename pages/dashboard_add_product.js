@@ -1,5 +1,5 @@
 import React from 'react'
-import Dashboard_Messages from '../components/Dashboard_Messages/Dashboard_Messages'
+import Add_product from '../components/Add_product/Add_product'
 import Dashboard_Navbar from '../components/Dashboard_Sidebar/Dashboard_Sidebar'
 import Layout from '../components/Layout/Layout'
 import LayoutDashboard from '../components/LayoutDashboardCustomers/LayoutDashboard'
@@ -7,10 +7,10 @@ import LayoutDashboard from '../components/LayoutDashboardCustomers/LayoutDashbo
 export default function dashboard() {
   return (
     <div className='essai'>
-      <Layout title="Dashboard - Messagerie">
+      <Layout title="Dashboard - Add a product">
         <LayoutDashboard>
           <Dashboard_Navbar/>
-          <Dashboard_Messages/>
+          <Add_product/>
         </LayoutDashboard>
       </Layout>
        

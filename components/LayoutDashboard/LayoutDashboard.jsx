@@ -11,8 +11,8 @@ export default function Layout({children, title}) {
     <div className={styles.line}></div>
     {children}
       <div className={styles.flexrow}>
-        <Dashboard_Navbar/>
-        <Dashboard_Messages/>
+        {/* <Dashboard_Navbar/>
+       <Dashboard_Messages/>  */}
       </div>
     </div>
   )

@@ -48,7 +48,7 @@ export default function Dashboard_Navbar() {
         </li>
         <li className={styles.li}>   
             <Image src="/images/addproducts.svg" alt="icon" width={30} height={30} />
-            <Link href="/addproducts" >
+            <Link href="/dashboard_add_product" >
                 <a className={styles.link}>Add a product</a>
             </Link>
         </li>
