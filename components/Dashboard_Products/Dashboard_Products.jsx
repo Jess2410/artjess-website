@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import styles from './Dashboard_Customers.module.css'
+import styles from './Dashboard_Products.module.css'
 import Link from 'next/link'
 import { useState } from 'react';
 import { useCallback } from 'react';

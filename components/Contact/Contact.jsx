@@ -82,9 +82,7 @@ export default function Contact() {
                 </div>
                 <div className={styles.row100}>
                     <div className={styles.inputBx100 }>
-                        <div className={styles.center}>
-                            <button type="submit" >SEND</button>
-                        </div>
+                            <button className={styles.center} type="submit" >SEND</button>
                     </div>
                 </div>
             </form>

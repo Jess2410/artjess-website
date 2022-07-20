@@ -10,20 +10,20 @@ export default function Dashboard_Navbar() {
         <h3 className={styles.title}>Main</h3>
         <li className={styles.li}>   
             <Image src="/images/dashboard.svg" alt="icon" width={30} height={30} />
-            <Link href="/dashboard" >
+            <Link href="/dashboard_home" >
                 <a className={styles.link}>Dashboard</a>
             </Link>
         </li>
         <h3 className={styles.title}>Lists</h3>
         <li className={styles.li}>   
             <Image src="/images/orders.svg" alt="icon" width={30} height={30} />
-            <Link href="/orders" >
+            <Link href="/dashboard_orders" >
                 <a className={styles.link}>Orders</a>
             </Link>
         </li>
         <li className={styles.li}>   
             <Image src="/images/products.svg" alt="icon" width={30} height={30} />
-            <Link href="/products" >
+            <Link href="/dashboard_products" >
                 <a className={styles.link}>Products</a>
             </Link>
         </li>
@@ -42,7 +42,7 @@ export default function Dashboard_Navbar() {
         </li>
         <li className={styles.li}>   
             <Image src="/images/analytics.svg" alt="icon" width={30} height={30} />
-            <Link href="/analytics" >
+            <Link href="/dashboard_analytics" >
                 <a className={styles.link}>Analytics</a>
             </Link>
         </li>
@@ -54,7 +54,7 @@ export default function Dashboard_Navbar() {
         </li>
         <li className={styles.li}>   
             <Image src="/images/logout.svg" alt="icon" width={30} height={30} /> 
-            <Link href="/logout" >
+            <Link href="/dashboard_logout" >
                 <a className={styles.link}>Log out</a>
             </Link>
         </li>

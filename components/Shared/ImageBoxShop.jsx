@@ -11,7 +11,7 @@ const router = useRouter()
       </div>
         <h2 className={styles.title}>{title}</h2>
         <h3 className={styles.price}>$ {price}</h3>
-        <button onClick={()=>router.push(`/products/${img.id}`)}>Voir</button>
+        <button className={styles.center} onClick={()=>router.push(`/products/${img.id}`)}>Voir</button>
     </div>
   );
 };
