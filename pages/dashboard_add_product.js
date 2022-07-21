@@ -7,7 +7,7 @@ import LayoutDashboard from '../components/LayoutDashboardCustomers/LayoutDashbo
 export default function dashboard() {
   return (
     <div className='essai'>
-      <Layout title="Dashboard - Add a product">
+      <Layout title="Dashboard - Ajout de Produits">
         <LayoutDashboard>
           <Dashboard_Navbar/>
           <Add_product/>

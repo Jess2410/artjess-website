@@ -8,13 +8,16 @@ import { useEffect } from 'react';
 import axios from "axios";
 import { BASE_URI } from '../../public/assets/app.config';
 import { toast } from "react-toastify";
+import {formatDate} from '../../public/assets/utils/formatDate'
+import Modal from './../Modal/Modal'
 
 
-export default function Dashboard() {
+export default function Dashboard_Messages() {
 
-
+  const [showModal, setShowModal] = useState(false);
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState(null)
 
   const getMessages = useCallback(() => {
     setLoading(true);
@@ -30,6 +33,12 @@ export default function Dashboard() {
       });
     setLoading(false);
   }, []);
+
+  const onReadMessage = (message) => {
+    setMessage(message)
+    setShowModal(true)
+  }
+  console.log("🚀 ~ file: Dashboard_Messages.jsx ~ line 39 ~ onReadMessage ~ message", message)
 
   useEffect(() => {
     getMessages();
@@ -60,6 +69,14 @@ export default function Dashboard() {
   };
 
   return (
+    <>
+    {showModal && (
+      <Modal
+        onClose={() => setShowModal(false)}
+        message={message}
+        handleDeleteMessage={handleDeleteMessage}
+      />
+    )}
   
         <div className={styles.table}>
             <table className={styles.table}>
@@ -76,13 +93,16 @@ export default function Dashboard() {
               <tbody>
           {messages.map((message) => (
 
-            <tr className={styles.tr} key={message._id}>
+            <tr onClick={() => onReadMessage(message)} className={styles.tr} key={message._id}>
               <td className={styles.td_left}>{message.lastname}</td>
               <td className={styles.td_left}>{message.firstname}</td>
               <td className={styles.td_left}>{message.email}</td>
               <td className={styles.td_left}>{message.message}</td>
-              <td className={styles.td_center}>{message.createdAt}</td>
+              <td className={styles.td_center}>{formatDate(message.createdAt)}</td>
               <td className={styles.td_center}>
+              <button className={styles.buttonNone} onClick={() => setShowModal(true)}>
+                  <Image src="/images/open.svg" alt="icon" width={30} height={30} />
+                </button>
                 <button className={styles.buttonNone} onClick={() => handleDeleteMessage(message?._id)}>
                   <Image src="/images/trashIcon.svg" alt="icon" width={30} height={30} />
                 </button>
@@ -92,6 +112,6 @@ export default function Dashboard() {
               </tbody>
             </table>
         </div>
-
+        </>
     )
   }

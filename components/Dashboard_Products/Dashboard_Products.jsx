@@ -10,7 +10,7 @@ import { BASE_URI } from '../../public/assets/app.config';
 import { toast } from "react-toastify";
 
 
-export default function Dashboard() {
+export default function Dashboard_Products() {
 
 
   const [messages, setMessages] = useState([]);
@@ -65,14 +65,12 @@ export default function Dashboard() {
             <table className={styles.table}>
               <thead>
                 <tr>
+                  <th className={styles.th}>Image</th>
                   <th className={styles.th}>Nom</th>
-                  <th className={styles.th}>Prénom</th>
-                  <th className={styles.th}>Email</th>
-                  <th className={styles.th}>Adresse</th>
-                  <th className={styles.th}>Code Postal</th>
-                  <th className={styles.th}>Ville</th>
-                  <th className={styles.th}>Téléphone</th>
-                  <th className={styles.th}>Commandes</th>
+                  <th className={styles.th}>Catégorie</th>
+                  <th className={styles.th}>Prix</th>
+                  <th className={styles.th}>Description</th>
+                  <th className={styles.th}>Stock</th>
                   <th className={styles.th}>Action</th>
                 </tr>
               </thead>
@@ -81,12 +79,10 @@ export default function Dashboard() {
             
             <tr className={styles.tr} key={message._id}>
               <td className={styles.td_left}>{message.lastname}</td>
+              <td className={styles.td_left}>{message.lastname}</td>
               <td className={styles.td_left}>{message.firstname}</td>
               <td className={styles.td_left}>{message.email}</td>
               <td className={styles.td_left}>{message.message}</td>
-              <td className={styles.td_left}>{message.firstname}</td>
-              <td className={styles.td_left}>{message.firstname}</td>
-              <td className={styles.td_left}>{message.firstname}</td>
               <td className={styles.td_left}>{message.firstname}</td>
               <td className={styles.td_center}>
                 <button className={styles.buttonNone} onClick={() => handleDeleteMessage(message?._id)}>

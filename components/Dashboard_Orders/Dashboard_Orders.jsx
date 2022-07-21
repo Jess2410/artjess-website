@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import styles from './Dashboard_Customers.module.css'
+import styles from './Dashboard_Orders.module.css'
 import Link from 'next/link'
 import { useState } from 'react';
 import { useCallback } from 'react';
@@ -10,7 +10,7 @@ import { BASE_URI } from '../../public/assets/app.config';
 import { toast } from "react-toastify";
 
 
-export default function Dashboard_Customers() {
+export default function Dashboard_Orders() {
 
 
   const [messages, setMessages] = useState([]);
@@ -65,13 +65,12 @@ export default function Dashboard_Customers() {
             <table className={styles.table}>
               <thead>
                 <tr>
+                  <th className={styles.th}>N° Commande</th>
+                  <th className={styles.th}>Id Client</th>
                   <th className={styles.th}>Nom</th>
                   <th className={styles.th}>Prénom</th>
+                  <th className={styles.th}>Commande</th>
                   <th className={styles.th}>Email</th>
-                  <th className={styles.th}>Adresse</th>
-                  <th className={styles.th}>Code Postal</th>
-                  <th className={styles.th}>Ville</th>
-                  <th className={styles.th}>Téléphone</th>
                   <th className={styles.th}>Action</th>
                 </tr>
               </thead>
@@ -80,12 +79,11 @@ export default function Dashboard_Customers() {
             
             <tr className={styles.tr} key={message._id}>
               <td className={styles.td_left}>{message.lastname}</td>
+              <td className={styles.td_left}>{message.lastname}</td>
               <td className={styles.td_left}>{message.firstname}</td>
               <td className={styles.td_left}>{message.email}</td>
               <td className={styles.td_left}>{message.message}</td>
-              <td className={styles.td_left}>{message.firstname}</td>
-              <td className={styles.td_left}>{message.firstname}</td>
-              <td className={styles.td_left}>{message.firstname}</td>
+              <td className={styles.td_left}>{message.email}</td>
               <td className={styles.td_center}>
                 <button className={styles.buttonNone} onClick={() => handleDeleteMessage(message?._id)}>
                   <Image src="/images/trashIcon.svg" alt="icon" width={30} height={30} />
