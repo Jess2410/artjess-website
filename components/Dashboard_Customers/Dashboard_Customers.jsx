@@ -89,7 +89,7 @@ export default function Dashboard_Customers() {
               <td className={styles.td_left}>{customer.zipCode}</td>
               <td className={styles.td_left}>{customer.city}</td>
               <td className={styles.td_center}>
-                <button className={styles.buttonNone} onClick={() => handleDeleteMessage(message?._id)}>
+                <button className={styles.buttonNone} onClick={() => handleDeleteCustomer(customer?._id)}>
                   <Image src="/images/trashIcon.svg" alt="icon" width={30} height={30} />
                 </button>
               </td>

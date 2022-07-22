@@ -13,15 +13,16 @@ import { toast } from "react-toastify";
 export default function Dashboard_Products() {
 
 
-  const [messages, setMessages] = useState([]);
+  const [products, setProducts] = useState([]);
+  console.log("🚀 ~ file: Dashboard_Products.jsx ~ line 17 ~ Dashboard_Products ~ products", products)
   const [loading, setLoading] = useState(false);
 
-  const getMessages = useCallback(() => {
+  const getProducts = useCallback(() => {
     setLoading(true);
     axios
-      .get(`${BASE_URI}/messages`)
+      .get(`${BASE_URI}/products`)
       .then((res) => {
-        setMessages(res.data);
+        setProducts(res.data);
         setLoading(false);
       })
       .catch((err) => {
@@ -32,16 +33,16 @@ export default function Dashboard_Products() {
   }, []);
 
   useEffect(() => {
-    getMessages();
-  }, [getMessages]);
+    getProducts();
+  }, [getProducts]);
 
-  const handleDeleteMessage = (id) => {
-  console.log("🚀 ~ file: Dashboard_Messages.jsx ~ line 41 ~ handleDeleteMessage ~ id", id)
+  const handleDeleteProduct = (id) => {
+  console.log(id)
     const loader = toast.loading("Veuillez patienter...");
     axios
-      .put(`${BASE_URI}/messages/delete/${id}`)
+      .put(`${BASE_URI}/products/delete/${id}`)
       .then((res) => {
-        getMessages();
+        getProducts();
         toast.update(loader, {
           render: res.data?.message,
           type: "success",
@@ -69,23 +70,23 @@ export default function Dashboard_Products() {
                   <th className={styles.th}>Nom</th>
                   <th className={styles.th}>Catégorie</th>
                   <th className={styles.th}>Prix</th>
-                  <th className={styles.th}>Description</th>
                   <th className={styles.th}>Stock</th>
+                  <th className={styles.th}>Description</th>
                   <th className={styles.th}>Action</th>
                 </tr>
               </thead>
               <tbody>
-          {messages.map((message) => (
+          {products.map((product) => (
             
-            <tr className={styles.tr} key={message._id}>
-              <td className={styles.td_left}>{message.lastname}</td>
-              <td className={styles.td_left}>{message.lastname}</td>
-              <td className={styles.td_left}>{message.firstname}</td>
-              <td className={styles.td_left}>{message.email}</td>
-              <td className={styles.td_left}>{message.message}</td>
-              <td className={styles.td_left}>{message.firstname}</td>
+            <tr className={styles.tr} key={product._id}>
+              <td className={styles.td_left}>{product.image}</td>
+              <td className={styles.td_left}>{product.name}</td>
+              <td className={styles.td_left}>{product.category}</td>
+              <td className={styles.td_left}>{product.price}</td>
+              <td className={styles.td_left}>{product.stock}</td>
+              <td className={styles.td_left}>{product.description}</td>
               <td className={styles.td_center}>
-                <button className={styles.buttonNone} onClick={() => handleDeleteMessage(message?._id)}>
+                <button className={styles.buttonNone} onClick={() => handleDeleteProduct(product?._id)}>
                   <Image src="/images/trashIcon.svg" alt="icon" width={30} height={30} />
                 </button>
               </td>
