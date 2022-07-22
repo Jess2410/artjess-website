@@ -68,6 +68,13 @@ export default function Dashboard_Messages() {
       });
   };
 
+const troncate = (str, maxLength) => {
+  if (str.length > maxLength) {
+    return str.substr(0, maxLength - 3) + '...';
+  }
+  return str;
+}
+
   return (
     <>
     {showModal && (
@@ -97,7 +104,7 @@ export default function Dashboard_Messages() {
               <td className={styles.td_left}>{message.lastname}</td>
               <td className={styles.td_left}>{message.firstname}</td>
               <td className={styles.td_left}>{message.email}</td>
-              <td className={styles.td_left}>{message.message}</td>
+              <td className={styles.td_left}>{troncate(message.message, 50)}</td>
               <td className={styles.td_center}>{formatDate(message.createdAt)}</td>
               <td className={styles.td_center}>
               <button className={styles.buttonNone} onClick={() => setShowModal(true)}>

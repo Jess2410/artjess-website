@@ -13,15 +13,15 @@ import { toast } from "react-toastify";
 export default function Dashboard_Customers() {
 
 
-  const [messages, setMessages] = useState([]);
+  const [customers, setCustomers] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const getMessages = useCallback(() => {
+  const getCustomers = useCallback(() => {
     setLoading(true);
     axios
-      .get(`${BASE_URI}/messages`)
+      .get(`${BASE_URI}/customers`)
       .then((res) => {
-        setMessages(res.data);
+        setCustomers(res.data);
         setLoading(false);
       })
       .catch((err) => {
@@ -32,16 +32,16 @@ export default function Dashboard_Customers() {
   }, []);
 
   useEffect(() => {
-    getMessages();
-  }, [getMessages]);
+    getCustomers();
+  }, [getCustomers]);
 
-  const handleDeleteMessage = (id) => {
+  const handleDeleteCustomer = (id) => {
   console.log("🚀 ~ file: Dashboard_Messages.jsx ~ line 41 ~ handleDeleteMessage ~ id", id)
     const loader = toast.loading("Veuillez patienter...");
     axios
-      .put(`${BASE_URI}/messages/delete/${id}`)
+      .put(`${BASE_URI}/customers/delete/${id}`)
       .then((res) => {
-        getMessages();
+        getCustomers();
         toast.update(loader, {
           render: res.data?.message,
           type: "success",
@@ -68,24 +68,26 @@ export default function Dashboard_Customers() {
                   <th className={styles.th}>Nom</th>
                   <th className={styles.th}>Prénom</th>
                   <th className={styles.th}>Email</th>
+                  <th className={styles.th}>Téléphone</th>
                   <th className={styles.th}>Adresse</th>
+                  <th className={styles.th}>Complément Adresse</th>
                   <th className={styles.th}>Code Postal</th>
                   <th className={styles.th}>Ville</th>
-                  <th className={styles.th}>Téléphone</th>
                   <th className={styles.th}>Action</th>
                 </tr>
               </thead>
               <tbody>
-          {messages.map((message) => (
+          {customers.map((customer) => (
             
-            <tr className={styles.tr} key={message._id}>
-              <td className={styles.td_left}>{message.lastname}</td>
-              <td className={styles.td_left}>{message.firstname}</td>
-              <td className={styles.td_left}>{message.email}</td>
-              <td className={styles.td_left}>{message.message}</td>
-              <td className={styles.td_left}>{message.firstname}</td>
-              <td className={styles.td_left}>{message.firstname}</td>
-              <td className={styles.td_left}>{message.firstname}</td>
+            <tr className={styles.tr} key={customer._id}>
+              <td className={styles.td_left}>{customer.lastname}</td>
+              <td className={styles.td_left}>{customer.firstname}</td>
+              <td className={styles.td_left}>{customer.email}</td>
+              <td className={styles.td_left}>{customer.phone}</td>
+              <td className={styles.td_left}>{customer.adress}</td>
+              <td className={styles.td_left}>{customer.street}</td>
+              <td className={styles.td_left}>{customer.zipCode}</td>
+              <td className={styles.td_left}>{customer.city}</td>
               <td className={styles.td_center}>
                 <button className={styles.buttonNone} onClick={() => handleDeleteMessage(message?._id)}>
                   <Image src="/images/trashIcon.svg" alt="icon" width={30} height={30} />
