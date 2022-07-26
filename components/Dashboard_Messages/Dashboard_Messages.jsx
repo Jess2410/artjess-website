@@ -17,7 +17,13 @@ export default function Dashboard_Messages() {
   const [showModal, setShowModal] = useState(false);
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState(null)
+  const [message, setMessage] = useState(null);
+  const [update, setUpdate] = useState(false);
+
+  const changeClass= () => {
+    setRead(true);
+  }
+
 
   const getMessages = useCallback(() => {
     setLoading(true);
@@ -37,15 +43,38 @@ export default function Dashboard_Messages() {
   const onReadMessage = (message) => {
     setMessage(message)
     setShowModal(true)
+    const loader = toast.loading("Veuillez patienter...");
+      axios
+        .put(`${BASE_URI}/message/${message._id}`, {read: true})
+        .then((res) => {
+          getMessages();
+          setShowModal(true)
+          setUpdate(false);
+          toast.update(loader, {
+            render: res.data?.message,
+            type: "success",
+            autoClose: 3000,
+            isLoading: false,
+          });
+        })
+        .catch((err) => {
+          toast.update(loader, {
+            render: "Une erreur est survenue !",
+            type: "error",
+            autoClose: 3000,
+            isLoading: false,
+          });
+        }
+        );
+    console.log("🚀 ~ file: Dashboard_Messages.jsx ~ line 46 ~ onReadMessage ~ message", message)
+    
   }
-  console.log("🚀 ~ file: Dashboard_Messages.jsx ~ line 39 ~ onReadMessage ~ message", message)
 
   useEffect(() => {
     getMessages();
   }, [getMessages]);
 
   const handleDeleteMessage = (id) => {
-  console.log("🚀 ~ file: Dashboard_Messages.jsx ~ line 41 ~ handleDeleteMessage ~ id", id)
     const loader = toast.loading("Veuillez patienter...");
     axios
       .put(`${BASE_URI}/messages/delete/${id}`)
@@ -68,12 +97,16 @@ export default function Dashboard_Messages() {
       });
   };
 
+  
+  
+
 const troncate = (str, maxLength) => {
   if (str.length > maxLength) {
     return str.substr(0, maxLength - 3) + '...';
   }
   return str;
 }
+
 
   return (
     <>
@@ -99,8 +132,8 @@ const troncate = (str, maxLength) => {
               </thead>
               <tbody>
           {messages.map((message) => (
-
-            <tr onClick={() => onReadMessage(message)} className={styles.tr} key={message._id}>
+            <tr onClick={() => onReadMessage(message)}  key={message._id} classeName={!!message?.read ? styles.message_message_read :styles.unread } bgColor={!!message?.read ? "#fff" : "#ebebeb"}>
+              <td className={styles.td} hidden>{message.read}</td>
               <td className={styles.td_left}>{message.lastname}</td>
               <td className={styles.td_left}>{message.firstname}</td>
               <td className={styles.td_left}>{message.email}</td>
