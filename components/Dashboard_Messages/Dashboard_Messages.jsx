@@ -132,7 +132,8 @@ const troncate = (str, maxLength) => {
               </thead>
               <tbody>
           {messages.map((message) => (
-            <tr onClick={() => onReadMessage(message)}  key={message._id} classeName={!!message?.read ? styles.message_message_read :styles.unread } bgColor={!!message?.read ? "#fff" : "#ebebeb"}>
+            <tr onClick={() => onReadMessage(message)}  key={message._id} classeName={!!message?.read ? styles.message_message_read :styles.unread } bgColor={!!message?.read ? "#fff" : "#ebebeb"} 
+            style={ !!message?.read ? { fontWeight: 'normal' } : { fontWeight: '600' }}>
               <td className={styles.td} hidden>{message.read}</td>
               <td className={styles.td_left}>{message.lastname}</td>
               <td className={styles.td_left}>{message.firstname}</td>

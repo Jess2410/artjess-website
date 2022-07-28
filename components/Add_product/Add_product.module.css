@@ -97,6 +97,20 @@
      display: flex;
      justify-content: center;
  }
+ .uploadBlock{
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    border: 1px solid #F3F3F3;
+    margin: 1rem;
+   
+ }
+ .uploadBlock img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+ }
  /* .wrapper{
      min-height : calc(100vh - 7vh)
  } */

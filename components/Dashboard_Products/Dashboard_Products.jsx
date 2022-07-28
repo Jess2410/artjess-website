@@ -14,7 +14,6 @@ export default function Dashboard_Products() {
 
 
   const [products, setProducts] = useState([]);
-  console.log("🚀 ~ file: Dashboard_Products.jsx ~ line 17 ~ Dashboard_Products ~ products", products)
   const [loading, setLoading] = useState(false);
 
   const getProducts = useCallback(() => {
@@ -79,7 +78,7 @@ export default function Dashboard_Products() {
           {products.map((product) => (
             
             <tr className={styles.tr} key={product._id}>
-              <td className={styles.td_left}>{product.image}</td>
+              <td className={styles.td_center}> <img width={60} height={60} style={{objectFit: "cover"}} src={`${BASE_URI}/file/images-store/${product.image}`} alt={product.image} />  </td>
               <td className={styles.td_left}>{product.name}</td>
               <td className={styles.td_left}>{product.category}</td>
               <td className={styles.td_left}>{product.price}</td>

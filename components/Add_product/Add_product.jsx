@@ -3,6 +3,7 @@ import styles from './Add_product.module.css';
 import { toast } from "react-toastify";
 import axios from 'axios'
 import { BASE_URI } from '../../public/assets/app.config';
+import { updloadFile } from '../../public/assets/utils/uploadFiles';
 
 
 const initProduct = {
@@ -13,12 +14,12 @@ const initProduct = {
     stock :"",
     description :""
     }
-console.log("🚀 ~ file: Add_product.jsx ~ line 16 ~ initProduct", initProduct)
 
 function Add_product() {
 
     const [loading, setLoading] = useState(false)
     const [product, setProduct] = useState(initProduct);
+    console.log("product  : ", product)
 
     
     const handleChange = (e) => {
@@ -26,11 +27,16 @@ function Add_product() {
         setProduct({ ...product, [name]: value });
       };
     
-      const handleCreateProduct = (e) => {
+      const handleCreateProduct = async (e) => {
         e.preventDefault();
         const loader = toast.loading("Veuillez patienter...");
-        axios
-          .post(`${BASE_URI}/product/add`, product)
+        let img_name = null;
+        if(product.image?.name){
+          img_name = await updloadFile(product.image);
+        }
+        if (img_name) {
+          axios
+          .post(`${BASE_URI}/product/add`, {...product, image: img_name})
           .then((res) => {
             toast.update(loader, {
               render: "Produit enregistré avec succès !",
@@ -48,6 +54,15 @@ function Add_product() {
               isLoading: false,
             });
           });
+        } else {
+          toast.update(loader, {
+            render: "L'image n'a pas été uploadée !",
+            type: "error",
+            autoClose: 3000,
+            isLoading: false,
+          });
+        }
+        
       };
 
   return (
@@ -73,6 +88,7 @@ function Add_product() {
                 </div>
             </div>
             <div className={styles.row100}>
+
                     <input 
                     className={styles.inputBx100}
                     type="file" 
@@ -80,8 +96,13 @@ function Add_product() {
                     name="image"
                     accept="image/png, image/jpeg"
                     placeholder="fichier"
-                    onChange={handleChange}
-                    value={product?.image}/>
+                    hidden
+                    onChange={e => setProduct({...product, image: e.target.files[0]})}
+                    />
+                    <label htmlFor="file" className={styles.uploadBlock}>
+                      {product?.image?.name ? <img src={URL.createObjectURL(product?.image)} alt="productimg" className={styles.image} /> : <span>Télécharger une image</span>}
+                      
+                    </label>
             </div>
             <div className={styles.row100}>
                 <div className={styles.inputBx100}>
