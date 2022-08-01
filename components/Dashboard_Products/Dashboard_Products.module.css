@@ -5,7 +5,7 @@
     margin : 0
 }
 .table{
-    width: 85%;
+    width: 100%;
     margin: 20px auto;
     text-align: left;
     /* display: flex;
@@ -51,5 +51,41 @@
 .buttonNone{
     background-color: transparent;
     border: none;
+    cursor: pointer;
+}
+
+.column{
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+}
+
+.row{
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    width: 100%;
+}
+
+.buttonBx{
+    display: flex;
+    height: 50px;
+    margin: 10px 0;
+    border: 1px solid #DA727B;
+    width: 200px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttonBx button{
+    background-color: white;
+    color: #DA727B;
+    padding: 10px;
+    border: none;
+    font-size: 1.2em;
+    font-weight: 500;
     cursor: pointer;
 }

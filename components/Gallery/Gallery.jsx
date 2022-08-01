@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import img1 from "./../../public/images/img1.jpg";
 import img2 from "./../../public/images/img2.jpg";
@@ -6,31 +6,52 @@ import img3 from "./../../public/images/img3.jpg";
 import styles from "./Gallery.module.css";
 import { ImageBox } from "../Shared/ImageBox";
 
-const imagesBoxData = [
-  { alt: "img1", src: img1 },
-  { alt: "img2", src: img2 },
-  { alt: "img3", src: img3 },
-  { alt: "img4", src: img1 },
-  { alt: "img5", src: img2 },
-  { alt: "img6", src: img3 },
-  { alt: "img7", src: img1 },
-  { alt: "img8", src: img2 },
-  { alt: "img9", src: img3 },
-  { alt: "img10", src: img1 },
-  { alt: "img11", src: img2 },
-  { alt: "img12", src: img3 },
-];
+import axios from "axios";
+import { BASE_URI } from '../../public/assets/app.config';
+
 
 export default function Gallery() {
+  
+  const [illustrations, setIllustrations] = useState([]);
+
+  const [loading, setLoading] = useState(false);
+  
+  const getIllustrations = useCallback(() => {
+    setLoading(true);
+    axios
+      .get(`${BASE_URI}/illustrations`)
+      .then((res) => {
+        setIllustrations(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
+    setLoading(false);
+  }, []);
+  
+  useEffect(() => {
+    getIllustrations();
+  }, [getIllustrations]);
+  
+  const id = "illustration"
   return (
     <>
       <div className="line"></div>
-    <div className={styles.gallery}>
-      <section className={styles.gallery_content}>
-        {imagesBoxData.map((img, index) => {
-          return <ImageBox key={index} img={img.src} alt={img.alt} />;
+    {/* <div className={styles.gallery}> */}
+    <div className={styles.shop}>
+      <section className={styles.shop_content}>
+      {/* <div className={styles.box}>
+      <div className={styles.iconBx}> */}
+        
+        {illustrations.map((illustration, index) => {
+        console.log("my clg",illustration)
+          return <ImageBox key={index} i illustration={illustration}/>;
         })}
-      </section>
+        {/* </div> */}
+        {/* </div> */}
+      </section> 
     </div>
     </>
   );

@@ -60,7 +60,15 @@ export default function Dashboard_Products() {
   };
 
   return (
-  
+
+    <div className={styles.column}>
+      <Link href="/dashboard_add_product">
+        <div className={styles.buttonBx}>
+          <button className={styles.button}>Add product</button>
+          <Image src="/images/plus.svg" alt="logo" width={30} height={30} />
+        </div>
+      </Link>
+
         <div className={styles.table}>
             <table className={styles.table}>
               <thead>
@@ -94,6 +102,7 @@ export default function Dashboard_Products() {
               </tbody>
             </table>
         </div>
-
+       
+        </div>
     )
   }
