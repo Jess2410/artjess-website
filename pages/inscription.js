@@ -1,15 +1,17 @@
-import React from 'react'
-import Footer from '../components/Footer/Footer.jsx'
-import Inscription from '../components/Inscription/Inscription.jsx'
-import Layout from '../components/Layout/Layout'
+import React from "react";
+import Footer from "../components/Footer/Footer.jsx";
+import Inscription from "../components/Inscription/Inscription.jsx";
+import Layout from "../components/Layout/Layout";
 
-export default function about() {
+const InscriptionPage = () => {
   return (
     <div>
       <Layout title="Inscription">
-         <Inscription/>
+        <Inscription />
       </Layout>
-      <Footer/>
+      <Footer />
     </div>
-  )
-}
+  );
+};
+
+export default InscriptionPage;

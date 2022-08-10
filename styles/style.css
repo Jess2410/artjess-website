@@ -219,6 +219,10 @@ a:hover{
        height: 300px;
        margin-top: 20px auto;
    }
+   .iconBx img
+   {
+       object-fit: contain;
+   }
 }
 @media all and (min-width: 688px) and (max-width: 991px){
     .row .col50 .imgBx
