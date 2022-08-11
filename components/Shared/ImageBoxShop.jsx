@@ -6,7 +6,6 @@ import { BASE_URI } from '../../public/assets/app.config';
 
 export const ImageBoxShop = ({ product }) => {
   
-  console.log("🚀 ~ file: ImageBoxShop.jsx ~ line 15 ~ ImageBoxShop ~ image", product)
 const router = useRouter()
   return (
     <div className={styles.box}>

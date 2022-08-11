@@ -15,7 +15,6 @@ function Add_illustration() {
 
     const [loading, setLoading] = useState(false)
     const [illustration, setIllustration] = useState(initIllustration);
-    console.log("illustration  : ", illustration)
 
     
     const handleChange = (e) => {

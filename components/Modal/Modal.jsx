@@ -4,7 +4,6 @@ import styles from './Modal.module.css'
 import Image from 'next/image'
 
 const Modal = ({onClose, message}) => {
-console.log("🚀 ~ file: Modal.jsx ~ line 4 ~ Modal ~ message", message)
     
     return (
         <div className={styles.modalBg}>

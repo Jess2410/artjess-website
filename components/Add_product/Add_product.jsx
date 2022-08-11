@@ -19,7 +19,6 @@ function Add_product() {
 
     const [loading, setLoading] = useState(false)
     const [product, setProduct] = useState(initProduct);
-    console.log("product  : ", product)
 
     
     const handleChange = (e) => {

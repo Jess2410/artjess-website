@@ -25,7 +25,6 @@ export default function Dashboard_Customers() {
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
         setLoading(false);
       });
     setLoading(false);
@@ -36,7 +35,6 @@ export default function Dashboard_Customers() {
   }, [getCustomers]);
 
   const handleDeleteCustomer = (id) => {
-  console.log("🚀 ~ file: Dashboard_Messages.jsx ~ line 41 ~ handleDeleteMessage ~ id", id)
     const loader = toast.loading("Veuillez patienter...");
     axios
       .put(`${BASE_URI}/customers/delete/${id}`)

@@ -34,7 +34,6 @@ export default function Dashboard_Messages() {
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
         setLoading(false);
       });
     setLoading(false);
@@ -66,7 +65,6 @@ export default function Dashboard_Messages() {
           });
         }
         );
-    console.log("🚀 ~ file: Dashboard_Messages.jsx ~ line 46 ~ onReadMessage ~ message", message)
     
   }
 

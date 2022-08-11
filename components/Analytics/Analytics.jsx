@@ -7,7 +7,6 @@ import styles from './Analytics.module.css'
 
 
 function Analytics() {
-    console.log(fullData);
   return (
 
 <div className={styles.globalContainer}>

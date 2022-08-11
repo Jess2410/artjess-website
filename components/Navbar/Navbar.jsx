@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useSelector, useDispatch } from "react-redux";
+import { setGetCustomerInfo } from '../../redux/customers/actions';
+
 
 export default function Navbar() {
+    const dispatch = useDispatch()
+    const customerStore = useSelector((s) => s.customerReducer);
+    console.log(
+      "🚀 ~ file: Header.jsx ~ line 11 ~ Header ~ customerStore",
+      customerStore
+    );
+
+    useEffect(() => {
+      const customerData = localStorage.getItem("customer-infos")
+        dispatch(setGetCustomerInfo(JSON.parse(customerData)))
+    }, [dispatch])
+    
+
   return (
     <div className='navbar'>
             <a href="#" className="logo"></a>

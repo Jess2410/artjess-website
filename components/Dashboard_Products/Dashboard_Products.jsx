@@ -25,7 +25,6 @@ export default function Dashboard_Products() {
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
         setLoading(false);
       });
     setLoading(false);
@@ -36,7 +35,6 @@ export default function Dashboard_Products() {
   }, [getProducts]);
 
   const handleDeleteProduct = (id) => {
-  console.log(id)
     const loader = toast.loading("Veuillez patienter...");
     axios
       .put(`${BASE_URI}/products/delete/${id}`)

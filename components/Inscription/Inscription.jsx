@@ -26,21 +26,12 @@ export default function Inscription() {
     const { name, value } = e.target;
     setCustomer({ ...customer, [name]: value });
   };
-  console.log(
-    "🚀 ~ file: Inscription.jsx ~ line 37 ~ handleCreateCustomer ~ confirmPassword",
-    confirmPassword
-  );
+ 
 
   const handleCreateCustomer = (e) => {
     e.preventDefault();
-
-    console.log(
-      "🚀 ~ file: Inscription.jsx ~ line 37 ~ handleCreateCustomer ~ customer?.password",
-      customer?.password
-    );
     if (confirmPassword === customer?.password) {
       const loader = toast.loading("Veuillez patienter...");
-      console.log(customer);
       axios
         .post(`${BASE_URI}/customer/add`, {
           ...customer,

@@ -25,7 +25,6 @@ export default function Dashboard_Orders() {
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
         setLoading(false);
       });
     setLoading(false);
@@ -36,7 +35,6 @@ export default function Dashboard_Orders() {
   }, [getMessages]);
 
   const handleDeleteMessage = (id) => {
-  console.log("🚀 ~ file: Dashboard_Messages.jsx ~ line 41 ~ handleDeleteMessage ~ id", id)
     const loader = toast.loading("Veuillez patienter...");
     axios
       .put(`${BASE_URI}/messages/delete/${id}`)

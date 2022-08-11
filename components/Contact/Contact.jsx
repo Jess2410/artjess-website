@@ -12,7 +12,6 @@ const initMessage = {
     message : "",
     read: false,
   }
-console.log("🚀 ~ file: Contact.jsx ~ line 15 ~ initMessage", initMessage)
 
 export default function Contact() {
 

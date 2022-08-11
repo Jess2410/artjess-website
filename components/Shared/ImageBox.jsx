@@ -5,7 +5,6 @@ import { BASE_URI } from '../../public/assets/app.config';
 
 
 export const ImageBox = ({ illustration }) => {
-console.log("🚀 ~ file: ImageBox.jsx ~ line 4 ~ ImageBox ~ illustration", illustration)
   return (
     <div className={styles.box}>
       <div className={styles.iconBx}>

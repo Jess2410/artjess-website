@@ -32,7 +32,6 @@ export default function Shop() {
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
         setLoading(false);
       });
     setLoading(false);
@@ -50,7 +49,6 @@ export default function Shop() {
       <section className={styles.shop_content}>
         
         {products.map((product, index) => {
-        console.log("my clg",product)
           return <ImageBoxShop key={index} product={product}/>;
         })}
       </section> 

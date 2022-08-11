@@ -25,7 +25,6 @@ export default function Gallery() {
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
         setLoading(false);
       });
     setLoading(false);
@@ -46,7 +45,6 @@ export default function Gallery() {
       <div className={styles.iconBx}> */}
         
         {illustrations.map((illustration, index) => {
-        console.log("my clg",illustration)
           return <ImageBox key={index} i illustration={illustration}/>;
         })}
         {/* </div> */}

@@ -6,12 +6,14 @@ import {useRouter} from "next/router";
 import axios from "axios";
 import { BASE_URI } from "../../public/assets/app.config";
 import { Toast } from "../../public/assets/Toast";
+import {useDispatch} from "react-redux"
+import { setGetCustomerInfo } from "../../redux/customers/actions";
 
 export const Connexion = () => {
+  const dispatch = useDispatch()
   const router = useRouter()
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
-  console.log("form :", form);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -27,6 +29,8 @@ export const Connexion = () => {
       })
       .then((res) => {
         sessionStorage.setItem("jess-art-token", res.data.token)
+        localStorage.setItem("customer-infos", JSON.stringify(res.data.customer))
+        dispatch(setGetCustomerInfo(res.data.customer))
         router.push("/shop")
         setLoading(false);
       })
