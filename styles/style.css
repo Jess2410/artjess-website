@@ -223,6 +223,21 @@ a:hover{
    {
        object-fit: contain;
    }
+
+   .inputBx100 input{
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #DA727B;
+    background: #DA727B !important;
+}
+.inputBx50 input{
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #DA727B;
+    background: #DA727B !important;
+}
 }
 @media all and (min-width: 688px) and (max-width: 991px){
     .row .col50 .imgBx

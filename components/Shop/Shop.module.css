@@ -10,6 +10,11 @@
     margin: 15px auto;
     padding: 5px 15px;
 }
+.box button:hover{
+    background: #DA727B;
+    color: #fff;
+}
+
 
 .shop{
     margin: 30px;
@@ -17,8 +22,8 @@
 .shop_content{
     position : relative;
     display : grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 20px;
     max-width: 100%;
     margin: 40px;
     height: auto !important;

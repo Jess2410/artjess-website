@@ -50,6 +50,22 @@
     resize: none;
 }
 
+.inputBx100Input{
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #DA727B;
+    background: #DA727B !important;
+}
+.inputBx50Input{
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #DA727B;
+    background: #DA727B !important;
+}
+
+
 .contactForm .row100 textarea{
     height: 100px;
 }
@@ -79,6 +95,8 @@
     margin: 15px auto;
     padding: 5px 15px;
 }
+
+
 /* .wrapper{
     min-height : calc(100vh - 7vh)
 } */

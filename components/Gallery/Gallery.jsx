@@ -40,8 +40,8 @@ export default function Gallery() {
     <>
       <div className="line"></div>
     {/* <div className={styles.gallery}> */}
-    <div className={styles.shop}>
-      <section className={styles.shop_content}>
+    <div className={styles.gallery}>
+      <section className={styles.gallery_content}>
       {/* <div className={styles.box}>
       <div className={styles.iconBx}> */}
         
