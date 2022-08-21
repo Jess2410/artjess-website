@@ -1,0 +1,44 @@
+.navbar{
+    width : 100%;
+    height : 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar_logo{
+    position : relative;
+    font-size: 28px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    opacity: 0;
+    animation : slideLeft 0.5s ease-in-out forwards;
+}
+.navigation_content{
+    position:absolute;
+    display: flex;
+    right: 150px;
+    opacity: 0;
+    /* visibility: hidden; */
+    transition : 0.5s;
+}
+.navigation_active{
+    opacity: 1;
+    visibility: visible;
+}
+.navigation_li{
+    list-style: none;
+    color: rgb(0, 0, 0);
+}
+
+.navigation_li_a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 15px;
+    margin : 0 20px;
+    font-weight: 600;
+    display: inline-block;
+    opacity: 0;
+}

@@ -32,6 +32,7 @@ export default function Shop() {
         setLoading(false);
       })
       .catch((err) => {
+        console.log("🚀 ~ file: Shop.jsx ~ line 35 ~ getProducts ~ err", err)
         setLoading(false);
       });
     setLoading(false);
@@ -41,16 +42,21 @@ export default function Shop() {
     getProducts();
   }, [getProducts]);
 
-  const id = "product"
+  const id = "products"
   return (
     <>
       <div className="line"></div>
     <div className={styles.shop}>
       <section className={styles.shop_content}>
         
-        {products.map((product, index) => {
-          return <ImageBoxShop key={index} product={product}/>;
-        })}
+        {products.map((product, index) => (
+          
+          <Link href={`/products/${product._id}`} key={index}>
+            <a>
+            <ImageBoxShop key={index} product={product}/>;
+            </a>
+          </Link>
+        ))}
       </section> 
     
     </div>
