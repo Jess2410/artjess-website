@@ -1,6 +1,7 @@
 //TYPES
 export const ADD_ITEM_CART = "ADD_ITEM_CART";
-export const UPDATE_ITEM_CART = "UPDATE_ITEM_CART";
+export const DELETE_ITEM_CART = "DELETE_ITEM_CART";
+export const GET_CART = "GET_CART";
 
 //ACTIONS
 export const addItemCart = (payload) => {
@@ -10,8 +11,16 @@ export const addItemCart = (payload) => {
   };
 };
 
-export const updateItemCart = () => {
+export const updateItemCart = (index) => {
   return {
-    type: UPDATE_ITEM_CART,
+    type: DELETE_ITEM_CART,
+    index,
+  };
+};
+
+export const setGetCart = (payload) => {
+  return {
+    type: GET_CART,
+    payload,
   };
 };

@@ -31,7 +31,7 @@ export const Connexion = () => {
         sessionStorage.setItem("jess-art-token", res.data.token)
         localStorage.setItem("customer-infos", JSON.stringify(res.data.customer))
         dispatch(setGetCustomerInfo(res.data.customer))
-        router.push("/shop")
+        router.push("/products")
         setLoading(false);
       })
       .catch((err) => {

@@ -1,6 +1,5 @@
 //IMPORT DES TYPES D'ACTIONS
-import { ADD_ITEM_CART } from "./actions";
-import { UPDATE_ITEM_CART } from "./actions";
+import { ADD_ITEM_CART, GET_CART, DELETE_ITEM_CART } from "./actions";
 
 const initState = {
   cart: [],
@@ -10,34 +9,38 @@ const cartReducer = (state = initState, action) => {
   const { type, payload } = action;
   switch (type) {
     case ADD_ITEM_CART:
-      const indexItemAdded = state.cart.findIndex(
-        (item) => item.id === payload.id
-      );
-
-      if (indexItemAdded !== -1) {
-        const updatedQuantity = {
-          ...state.cart[indexItemAdded],
-          quantity: state.cart[indexItemAdded].quantity + payload.quantity,
+      const findItem = state.cart.find((el) => el?._id === payload?._id);
+      if (!!findItem) {
+        const newItem = {
+          ...findItem,
+          quantity: payload?.quantity + findItem?.quantity,
         };
-        const newCart = [...state.cart];
-        newCart.splice(indexItemAdded, 1, updatedQuantity);
+        const filteredCart = state.cart.filter(
+          (el) => el?._id !== newItem?._id
+        );
         return {
-          cart: newCart,
+          cart: [...filteredCart, newItem],
         };
       } else {
-        const newCart = [...state.cart];
-        newCart.push(payload);
-        console.log(newCart);
         return {
-          cart: newCart,
+          cart: [...state.cart, payload],
         };
       }
+    case GET_CART:
+      return {
+        cart: payload,
+      };
 
-    case UPDATE_ITEM_CART:
-    //   return {
-    //     ...state,
-    //     cart: [...state.cart],
-    //   };
+    // case DELETE_ITEM_CART:
+    // const deletedItemCart = state.cart.filter(
+    //   (el) => el?._id !== findItem?._id
+    // );
+    // return {
+    //   cart: [...state.cart, deletedItemCart],
+
+    // ...state,
+    // items: state.items.filter((item, index) => index !== action.payload)
+    // };
   }
 
   return state;

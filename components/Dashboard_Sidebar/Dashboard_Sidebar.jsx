@@ -8,13 +8,13 @@ export default function Dashboard_Navbar() {
     <div className={styles.dashboard_navbar}>
     <ul className="menu">
         <h3 className={styles.title}>Main</h3>
-        <li className={styles.li}>   
+        {/* <li className={styles.li}>   
             <Image src="/images/dashboard.svg" alt="icon" width={30} height={30} />
             <Link href="/dashboard_home" >
                 <a className={styles.link}>Dashboard</a>
             </Link>
         </li>
-        <h3 className={styles.title}>Lists</h3>
+        <h3 className={styles.title}>Lists</h3> */}
         <li className={styles.li}>   
             <Image src="/images/orders.svg" alt="icon" width={30} height={30} />
             <Link href="/dashboard_orders" >

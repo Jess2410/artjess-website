@@ -16,17 +16,23 @@
 }
 
 
-.shop{
+/* .shop{
     margin: 30px;
-}
+} */
 .shop_content{
     position : relative;
     display : grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    grid-gap: 20px;
+    /* grid-gap: 20px; */
     max-width: 100%;
-    margin: 40px;
+    /* margin: 40px; */
     height: auto !important;
+    align-items: center;
+}
+.a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .title{
     font-size: 1.5em;
@@ -54,10 +60,14 @@
 
  }
 .iconBx{
-    margin-top: 25px;
+    /* margin-top: 25px; */
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.section{
+    padding: 0 0;
 }
 
 .iconBx img{

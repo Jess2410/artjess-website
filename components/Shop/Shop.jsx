@@ -46,8 +46,8 @@ export default function Shop() {
   return (
     <>
       <div className="line"></div>
-    <div className={styles.shop}>
-      <section className={styles.shop_content}>
+    {/* <div className={styles.shop}> */}
+      <div className={styles.shop_content}>
         
         {products.map((product, index) => (
           
@@ -57,9 +57,9 @@ export default function Shop() {
             </a>
           </Link>
         ))}
-      </section> 
+      </div> 
     
-    </div>
+    {/* </div> */}
 
     </>
   );
