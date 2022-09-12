@@ -28,8 +28,12 @@ export default function Navbar() {
     dispatch(setGetCustomerInfo(JSON.parse(customerData)));
   }, [dispatch]);
   useEffect(() => {
-    const cartData = localStorage.getItem("cart-infos");
-    dispatch(setGetCart(JSON.parse(cartData)));
+    let cartData = []
+    if(typeof window !== "undefined"){
+      cartData = localStorage.getItem("cart-infos");
+    }
+    console.log("cartData: " + cartData);
+    dispatch(setGetCart(JSON.parse(cartData) ?? []));
   }, [dispatch]);
 
   const logOut = (customerId) => {
@@ -131,7 +135,7 @@ export default function Navbar() {
                   height={30}
                   alt="icône cadi"
                 />
-                <span className="notif">{cart.length}</span>
+                <span className="notif">{cart?.length}</span>
               </div>
             </a>
             {openCart && <Cart />}

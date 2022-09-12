@@ -2,7 +2,6 @@ import React from 'react'
 import Image from 'next/image'
 import me2 from './../../public/images/me2.jpg'
 import sign from './../../public/images/sign.png'
-import Layout from '../Layout/Layout'
 
 export default function About() {
   return (

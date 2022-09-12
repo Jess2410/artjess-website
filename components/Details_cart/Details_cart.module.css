@@ -55,3 +55,28 @@
     border: none;
     cursor: pointer;
 }
+.btn-container{
+    display: flex;
+    align-items: center;
+}
+
+
+.btn_qty{
+    background-color: #DA727B;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    margin: 0 20px;
+    border: none;
+    border-radius: 8px;
+}
+
+.total_price{
+/* font-weight: bold; */
+font-size: 1.5rem;
+text-align: right;
+}
+
+.price{
+    color: #DA727B;
+}

@@ -41,7 +41,7 @@ export default function ProductScreen() {
     getProduct();
   }, [getProduct]);
   useEffect(() => {
-    if (cart.length > 0) {
+    if (cart?.length > 0) {
       localStorage.setItem("cart-infos", JSON.stringify(cart));
     }
   }, [cart]);

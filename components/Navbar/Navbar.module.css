@@ -24,6 +24,9 @@
     /* visibility: hidden; */
     transition : 0.5s;
 }
+.navigation ul{
+    flex-wrap: wrap;
+}
 .navigation_active{
     opacity: 1;
     visibility: visible;

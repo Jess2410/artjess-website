@@ -21,7 +21,7 @@ export default function Cart() {
     <div className={styles.dropDownMenu_content}>
         <ul>
 
-            {cart.map((article, index) => (
+            {cart?.map((article, index) => (
                 <li key={index}>
                     <p>x{article?.quantity} - {article?.name} 
                         <button className={styles.buttonNone} onClick={() => removeItemHandler(article)}>
@@ -34,7 +34,7 @@ export default function Cart() {
                     <Link href="/details_order">
                         <a>
                             <button>Passer la commande</button>
-                            <p>{cart.length} article(s)</p>
+                            <p>{cart?.length} article(s)</p>
                         </a>
                     </Link>
             

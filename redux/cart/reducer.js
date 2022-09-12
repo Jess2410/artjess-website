@@ -15,13 +15,13 @@ const cartReducer = (state = initState, action) => {
   const { type, payload } = action;
   switch (type) {
     case ADD_ITEM_CART:
-      const findItem = state.cart.find((el) => el?._id === payload?._id);
+      const findItem = state.cart?.find((el) => el?._id === payload?._id);
       if (!!findItem) {
         const newItem = {
           ...findItem,
           quantity: payload?.quantity + findItem?.quantity,
         };
-        const filteredCart = state.cart.filter(
+        const filteredCart = state.cart?.filter(
           (el) => el?._id !== newItem?._id
         );
         return {
@@ -29,7 +29,7 @@ const cartReducer = (state = initState, action) => {
         };
       } else {
         return {
-          cart: [...state.cart, payload],
+          cart: [...state?.cart, payload],
         };
       }
     // case UPDATE_QUANTITY:

@@ -4,6 +4,7 @@ export const CART_REMOVE_ITEM = "CART_REMOVE_ITEM";
 export const GET_CART = "GET_CART";
 export const UPDATE_QUANTITY = "UPDATE_QUANTITY";
 export const UPDATE_QUANTITY_MOINS = "UPDATE_QUANTITY_MOINS";
+export const AMOUNT_CART = "AMOUNT_CART";
 
 //ACTIONS
 export const addItemCart = (payload) => {
@@ -37,6 +38,12 @@ export const setUpdateQuantity = (payload) => {
 export const setUpdateQuantityMoins = (payload) => {
   return {
     type: UPDATE_QUANTITY_MOINS,
+    payload,
+  };
+};
+export const totalAmount = (payload) => {
+  return {
+    type: AMOUNT_CART,
     payload,
   };
 };
