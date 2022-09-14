@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeItemHandler, setUpdateQuantity, setUpdateQuantityMoins, totalAmount} from "../../redux/cart/actions";
 import { BASE_URI } from '../../public/assets/app.config';
 import Paypal from "../Paypal/Paypal";
+import Link from "next/link";
 
 export default function Details_cart() {
   const { cart } = useSelector((s) => s.cartReducer);
@@ -62,7 +63,7 @@ export default function Details_cart() {
         (
           
           <li key={article._id}>
-            <img width={60} height={60} style={{objectFit: "cover"}} src={`${BASE_URI}/file/images-store/${article.image}`} alt={article.image} />
+            <Image width={60} height={60} style={{objectFit: "cover"}} src={`${BASE_URI}/file/images-store/${article.image}`} alt={article.image} />
             <div className="bloc-cart-infos">
               <h4>{article.title}</h4>
               <p className={styles.price}>{article.price * Number(article.quantity)}€</p>
@@ -119,7 +120,9 @@ export default function Details_cart() {
       <br />
       <p className={styles.total_price}>Total : {`${totalPrice.toFixed(2)}€`}</p>
       <br />
-      {online ?  <Paypal amount={totalPrice.toFixed(2)} /> : <button>Connectez-vous !</button>}
+      {online ?  <Paypal amount={totalPrice.toFixed(2)} /> : 
+      
+      <Link href="/connexion" ><button className={styles.connect} >Connectez-vous !</button></Link>}
      
     </div>
   );

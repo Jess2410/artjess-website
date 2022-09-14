@@ -51,6 +51,7 @@
  .contactForm .row100{
      width: 100%;
      display: flex;
+     justify-content: center;
  }
  .contactForm .row100 .inputBx50{
      width: 50%;
@@ -59,6 +60,7 @@
  .contactForm .row100 .inputBx100{
      width: 100%;
      margin : 0 20px;
+     justify-content: center;
  }
  .contactForm .row100 input,
  .contactForm .row100 textarea{
@@ -103,6 +105,9 @@
     border-radius: 8px;
     border: 1px solid #F3F3F3;
     margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
    
  }
  .uploadBlock img{
@@ -110,6 +115,14 @@
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
+ }
+
+ .uploadBlock_span{
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+    text-align: center;
+    display: block;
+
  }
  /* .wrapper{
      min-height : calc(100vh - 7vh)

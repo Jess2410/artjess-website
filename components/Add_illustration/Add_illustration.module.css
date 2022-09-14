@@ -51,6 +51,7 @@
  .contactForm .row100{
      width: 100%;
      display: flex;
+     justify-content: center;
  }
  .contactForm .row100 .inputBx50{
      width: 50%;
@@ -82,6 +83,15 @@
  .contactForm .row100 input::placeholder,
  .contactForm .row100 textarea::placeholder{
      color: rgba(255,255,255,0.5);
+     text-align: center;
+ }
+
+ .uploadBlock_span{
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+    text-align: center;
+    display: block;
+
  }
  .contactForm .row100 button{
      background: #fff;
@@ -103,6 +113,9 @@
     border-radius: 8px;
     border: 1px solid #F3F3F3;
     margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
    
  }
  .uploadBlock img{

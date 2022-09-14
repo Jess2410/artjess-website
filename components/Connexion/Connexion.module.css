@@ -69,8 +69,7 @@
     display: block;
 }
 .contactForm .row100 input[type="submit"]:hover{
-    letter-spacing: 6px;
-    width: 120px;
+    color:#DA727B
 }
 .center{
     margin : auto;
@@ -94,10 +93,10 @@
     font-weight: 200;
     font-style: italic;
 }
-.a:hover{
+/* .a:hover{
     letter-spacing: 0;
     font-weight: 700;
-}
+} */
 
   /* .sci ul li a img{
       filter: invert(1);

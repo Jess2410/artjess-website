@@ -75,8 +75,22 @@
 /* font-weight: bold; */
 font-size: 1.5rem;
 text-align: right;
+
 }
 
 .price{
     color: #DA727B;
+}
+
+.connect{
+
+        font-size: 1.2rem;
+        text-align: center;
+        background-color: #DA727B;
+        color: #fff;
+        border-radius: 10px;
+        border: none;
+        padding: 10px 20px;
+        margin: auto;
+        display: block;
 }

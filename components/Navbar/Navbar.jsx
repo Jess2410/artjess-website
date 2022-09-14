@@ -111,11 +111,11 @@ export default function Navbar() {
             </a>
           )}
         </li>
-        <li onClick={() => logOut()}>
+        {/* <li onClick={() => logOut()}>
           <a>
             <Image src="/images/close.svg" alt="icon" width={30} height={30} />
           </a>
-        </li>
+        </li> */}
 
         {/* <Link href="/cart">
                             <a>

@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import axios from 'axios'
 import { BASE_URI } from '../../public/assets/app.config';
 import { updloadFile } from '../../public/assets/utils/uploadFiles';
-
+import Image from "next/image";
 
 const initProduct = {
     image:"",
@@ -99,7 +99,7 @@ function Add_product() {
                     onChange={e => setProduct({...product, image: e.target.files[0]})}
                     />
                     <label htmlFor="file" className={styles.uploadBlock}>
-                      {product?.image?.name ? <img src={URL.createObjectURL(product?.image)} alt="productimg" className={styles.image} /> : <span>Télécharger une image</span>}
+                      {product?.image?.name ? <Image src={URL.createObjectURL(product?.image)} alt="productimg" className={styles.image} /> : <span className={styles.uploadBlock_span}>Ajouter une image</span>}
                       
                     </label>
             </div>

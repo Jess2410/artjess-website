@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemCart } from "../../redux/cart/actions";
 import { Toast } from "../../public/assets/Toast";
+import Image from "next/image";
 
 export default function ProductScreen() {
   const [product, setProduct] = useState(null);
@@ -40,6 +41,7 @@ export default function ProductScreen() {
   useEffect(() => {
     getProduct();
   }, [getProduct]);
+
   useEffect(() => {
     if (cart?.length > 0) {
       localStorage.setItem("cart-infos", JSON.stringify(cart));
@@ -65,7 +67,7 @@ export default function ProductScreen() {
         <div className="showcase">
           <div className="container-img-showcase">
             {product?.image && (
-              <img
+              <Image
                 src={`${BASE_URI}/file/images-store/${product.image}`}
                 alt={product.name}
                 width={300}
