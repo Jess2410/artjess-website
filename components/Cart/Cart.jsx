@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react'
 import Image from 'next/image'
-import styles from "./Cart.module.css";
+import styles from "./cart.module.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { removeItemHandler } from "../../redux/cart/actions";
 
@@ -31,12 +31,22 @@ export default function Cart() {
                 </li>
             ))}
                     <hr />
-                    <Link href="/details_order">
-                        <a>
-                            <button>Passer la commande</button>
-                            <p>{cart?.length} article(s)</p>
+                            {
+                            cart?.length == 0 ?
+                    <Link href="/products">
+                        <a className={styles.link}>
+                           Shop
                         </a>
                     </Link>
+                    :
+                    <Link href="/details_order">
+                        <a>
+                          
+                            <button className={styles.link}>Passer la commande</button>
+                            <p>{cart?.length} article(s)</p>
+                        </a>
+                    </Link>}
+                            
             
 
         </ul>
