@@ -43,17 +43,6 @@ export default function Details_cart() {
       }
     }
 
-//     useEffect(() => {
-//       setAmount(amount);
-//     }, [amount]);
-    
-// const totalAmount = (amount) => {
-//   dispatch({ type: "AMOUNT_CART", payload: amount = totalPrice });
-//   }
-
-//   console.log(totalAmount)
-
-
   return (
     <div className="global-container">
       {/* <p className="heading-cart">Votre panier :</p> */}
@@ -121,8 +110,9 @@ export default function Details_cart() {
       <p className={styles.total_price}>Total : {`${totalPrice.toFixed(2)}€`}</p>
       <br />
       {online ?  <Paypal amount={totalPrice.toFixed(2)} /> : 
-      
-      <Link href="/connexion" ><button className={styles.connect} >Connectez-vous !</button></Link>}
+      <>
+      <p style={{margin:'auto'}}>Pour passer commande</p>
+      <Link href="/connexion" ><button className={styles.connect}> Connectez-vous !</button></Link></>}
      
     </div>
   );

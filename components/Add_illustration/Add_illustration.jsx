@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import axios from 'axios'
 import { BASE_URI } from '../../public/assets/app.config';
 import { updloadFile } from '../../public/assets/utils/uploadFiles';
+import Image from "next/image";
 
 
 const initIllustration = {
@@ -85,7 +86,7 @@ function Add_illustration() {
                     onChange={e => setIllustration({...illustration, image: e.target.files[0]})}
                     />
                     <label htmlFor="file" className={styles.uploadBlock}>
-                      {illustration?.image?.name ? <img src={URL.createObjectURL(illustration?.image)} alt="illustration img" className={styles.image} /> : <span className={styles.uploadBlock_span}>Ajouter une image</span>}
+                      {illustration?.image?.name ? <Image src={URL.createObjectURL(illustration?.image)} alt="illustration img" className={styles.image} /> : <span className={styles.uploadBlock_span}>Ajouter une image</span>}
                       
                     </label>
             </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import menu from "/public/images/menu.png";
 import close from "/public/images/close.png";
-import "./Header.module.css";
+import styles from "./Header.module.css";
 import Navbar from "../Navbar/Navbar";
 import Link from "next/link";
 
@@ -33,8 +33,11 @@ export default function Header() {
             href="https://www.instagram.com/art.jess2410"
             target="_blank"
             rel="noreferrer"
+            className={styles.flex}
           >
-            Follow me on Instagram
+            <p className={styles.text}>Follow me on Instagram </p>
+         
+            <Image src="/images/instagram.svg" alt="icon" width={30} height={30} />
           </a>
         </div>
 

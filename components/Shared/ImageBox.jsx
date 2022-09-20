@@ -8,7 +8,7 @@ export const ImageBox = ({ illustration }) => {
   return (
     <div className={styles.box}>
       <div className={styles.iconBx}>
-      <img width="100%" height={280} src={`${BASE_URI}/file/images-store/${illustration.image}`} alt={illustration.name} /> 
+      <Image width={280}  height={280} src={`${BASE_URI}/file/images-store/${illustration.image}`} alt={illustration.name} /> 
         {/* <Image src={img} alt={alt} height="400px" width="400px" /> */}
       </div>
     </div>

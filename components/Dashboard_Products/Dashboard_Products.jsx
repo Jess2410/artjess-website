@@ -84,7 +84,7 @@ export default function Dashboard_Products() {
           {products.map((product) => (
             
             <tr className={styles.tr} key={product._id}>
-              <td className={styles.td_center}> <img width={60} height={60} style={{objectFit: "cover"}} src={`${BASE_URI}/file/images-store/${product.image}`} alt={product.image} />  </td>
+              <td className={styles.td_center}> <Image width={60} height={60} style={{objectFit: "cover"}} src={`${BASE_URI}/file/images-store/${product.image}`} alt={product.image} />  </td>
               <td className={styles.td_left}>{product.name}</td>
               <td className={styles.td_left}>{product.category}</td>
               <td className={styles.td_left}>{product.price}</td>

@@ -5,6 +5,9 @@ import {
   PayPalButtons,
   usePayPalScriptReducer
 } from "@paypal/react-paypal-js";
+import { useRouter } from 'next/router';
+
+
 
 const paypalScriptOptions = {
   "client-id":
@@ -53,12 +56,18 @@ function Button({amount}) {
        * }
        */
       return actions.order.capture({}).then((details) => {
-        alert(
-          "Transaction completed by" +
-            (details?.payer.name.given_name ?? "No details")
-        );
 
-        alert("Data details: " + JSON.stringify(data, null, 2));
+          const name = details.payer.name.given_name;
+          window.location.replace("/success_page");
+          alert(`Thank you so much for your order :  ${name}`);
+          localStorage.clear();
+
+        // alert(
+        //   "Transaction completed by" +
+        //     (details?.payer.name.given_name ?? "No details")
+        // );
+
+        // alert("Data details: " + JSON.stringify(data, null, 2));
       });
     }
   };
