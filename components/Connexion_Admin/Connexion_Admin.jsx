@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import Image from "next/image";
-import styles from "./Connexion.module.css";
+import styles from "./Connexion_Admin.module.css";
 import Link from "next/link";
 import {useRouter} from "next/router";
 import axios from "axios";
 import { BASE_URI } from "../../public/assets/app.config";
 import { Toast } from "../../public/assets/Toast";
 import {useDispatch} from "react-redux"
-import { setGetCustomerInfo } from "../../redux/customers/actions";
+import { setGetAdminInfo } from "../../redux/admin/actions";
 
-export const Connexion = () => {
+export const Connexion_Admin = () => {
   const dispatch = useDispatch()
   const router = useRouter()
   const [form, setForm] = useState({ email: "", password: "" });
@@ -23,15 +22,15 @@ export const Connexion = () => {
     e.preventDefault();
     setLoading(true);
     axios
-      .post(`${BASE_URI}/customer/auth`, {
+      .post(`${BASE_URI}/admin/auth`, {
         email: form.email.toLowerCase(),
         password: form.password,
       })
       .then((res) => {
-        sessionStorage.setItem("jess-art-token", res.data.token)
-        localStorage.setItem("customer-infos", JSON.stringify(res.data.customer))
-        dispatch(setGetCustomerInfo(res.data.customer))
-        router.push("/products")
+        sessionStorage.setItem("jess-art-token-admin", res.data.token)
+        localStorage.setItem("admin-infos", JSON.stringify(res.data.token))
+        dispatch(setGetAdminInfo(res.data.token))
+        router.push("/dashboard_messages")
         setLoading(false);
       })
       .catch((err) => {
