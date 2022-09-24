@@ -99,7 +99,7 @@ function Add_product() {
                     onChange={e => setProduct({...product, image: e.target.files[0]})}
                     />
                     <label htmlFor="file" className={styles.uploadBlock}>
-                      {product?.image?.name ? <Image src={URL.createObjectURL(product?.image)} alt="productimg" className={styles.image} /> : <span className={styles.uploadBlock_span}>Ajouter une image</span>}
+                      {product?.image?.name ? <Image width={280} height={280} src={URL.createObjectURL(product?.image)} alt="productimg" className={styles.image} /> : <span className={styles.uploadBlock_span}>Ajouter une image</span>}
                       
                     </label>
             </div>

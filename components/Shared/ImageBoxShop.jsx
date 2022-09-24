@@ -11,7 +11,7 @@ const router = useRouter()
     <div className={styles.box}>
       <div className={styles.iconBx}>
          {/* <Image src={product?.image} alt={alt} height="400px" width="400px" />  */}
-         <img width="100%" height={280} src={`${BASE_URI}/file/images-store/${product.image}`} alt={product.image} /> 
+         <Image width={280} height={280} src={`${BASE_URI}/file/images-store/${product.image}`} alt={product.image} /> 
       </div>
         <h2 className={styles.title}>{product?.name}</h2>
         <h3 className={styles.price}>$ {product?.price}</h3>

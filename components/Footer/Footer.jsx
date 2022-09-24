@@ -9,9 +9,18 @@ import linkedin from './../../public/images/linkedin.svg'
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <p className={styles.footer}>2022 - Jessica TOUNKARA</p>
       <div className={styles.sci}>
-        <ul>
+      {/* <p className={styles.footer}>2022 - Jess&copy;</p> */}
+      <ul className={styles.center}>
+        <li>
+                <Link href="#">
+                    <a> 
+                    Jess&copy; - 2022 
+                    </a>
+                </Link>
+            </li>
+        </ul>
+        <ul className={styles.center}>
             <li>
                 <Link href="#">
                     <a> 
@@ -33,6 +42,7 @@ export default function Footer() {
                     </a>
                 </Link>
             </li>
+  
         </ul>
       </div>
     </footer>

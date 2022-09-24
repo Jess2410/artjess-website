@@ -20,28 +20,19 @@ export default function Header() {
       <Navbar />
       <div className="banner" id="home">
         <div className="banner-text">
-          <div className="row">
+          <div className={styles.row}>
             <h2>
               <span>ART</span> Of{" "}
             </h2>
             <div className="sign"></div>
           </div>
-          <Link href="/gallery">
-            <a className="btn-ghost">Enter</a>
-          </Link>
-          <a
-            href="https://www.instagram.com/art.jess2410"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.flex}
-          >
-            <p className={styles.text}>Follow me on Instagram </p>
-         
-            <Image src="/images/instagram.svg" alt="icon" width={30} height={30} />
-          </a>
+          <div   className={styles.flex}>  
+            <a className={styles.text} target="_blank" href="https://www.instagram.com/art.jess2410" rel="noreferrer">Follow me on Instagram </a>
+            <div className={styles.imgBx}>
+              <Image src="/images/instagram.svg" alt="icon" width={30} height={30} />
+            </div>
+          </div>
         </div>
-
-        {/* <Image src={bgjess} alt="background"  layout="fill" /> */}
       </div>
     </header>
   );

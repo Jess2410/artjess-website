@@ -1,6 +1,7 @@
 
 .sci ul{
     display : flex;
+    margin-bottom: 5px;
   }
   .sci ul li{
       list-style: none;
@@ -17,13 +18,20 @@
       background: #DA727B;
       color: #fff;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
-      align-items: center;
+      align-items: baseline;
       padding: 20px 100px;
-      width: 100%;
-      height: 8vh;
+      max-width: 100%;
+      max-height:auto;
+      justify-content: center;
+
     
   }
     .footer p{
         color: #fff;
+    }
+    .center{
+      justify-content: center;
+      width: 100%;
     }

@@ -2,14 +2,15 @@ import React from 'react'
 import Image from 'next/image'
 import me2 from './../../public/images/me2.jpg'
 import sign from './../../public/images/sign.png'
+import styles from "./About.module.css";
 
 export default function About() {
   return (
         <section className="about" id="about">
     <div className="row">
        <div className="col50">
-           <h3 className='title'>Jessica, Character designer &#38; développeur web front-end.</h3>
-           <p>Ma passion pour le dessin s&rsquo;est révélée il y a environ deux ans. Ayant toujours eu l&rsquo;âme artistique et créative, je n&rsquo;osais pourtant pas franchir le pas.
+           <h3 className='title_section'>Jessica, Character designer &#38; développeur web front-end.</h3>
+           <p className='txt'>Ma passion pour le dessin s&rsquo;est révélée il y a environ deux ans. Ayant toujours eu l&rsquo;âme artistique et créative, je n&rsquo;osais pourtant pas franchir le pas.
                     Et puis un jour, on prend du recul et on se dit pourquoi pas ?
                     Et, au final, il s&rsquo;avère souvent que
                     <br></br>
@@ -25,9 +26,9 @@ export default function About() {
                     </div>
        </div>
        <div className="col50">
-           <div className="imgBx">
-            <Image src={me2} alt="me"  layout="responsive"/>
-           </div>
+           {/* <div className="imgBx"> */}
+            <Image src={me2} alt="me"  layout="responsive"></Image>
+           {/* </div> */}
        </div>
     </div>
 </section>

@@ -86,7 +86,7 @@ function Add_illustration() {
                     onChange={e => setIllustration({...illustration, image: e.target.files[0]})}
                     />
                     <label htmlFor="file" className={styles.uploadBlock}>
-                      {illustration?.image?.name ? <Image src={URL.createObjectURL(illustration?.image)} alt="illustration img" className={styles.image} /> : <span className={styles.uploadBlock_span}>Ajouter une image</span>}
+                      {illustration?.image?.name ? <Image width={280} height={280} src={URL.createObjectURL(illustration?.image)} alt="illustration img" className={styles.image} /> : <span className={styles.uploadBlock_span}>Ajouter une image</span>}
                       
                     </label>
             </div>
