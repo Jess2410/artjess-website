@@ -45,7 +45,6 @@ export default function Details_cart() {
 
   return (
     <div className="global-container">
-      {/* <p className="heading-cart">Votre panier :</p> */}
       <ul className="cart-list">
         {cart?.map((article) =>
         
@@ -59,7 +58,6 @@ export default function Details_cart() {
               <p>{article.name}</p>
             </div>
             <div className="bloc-input">
-              {/* <label htmlFor="quantityInput">Quantity</label> */}
               <button className={styles.btn_qty}
                 onClick={() =>
                   {
@@ -111,7 +109,7 @@ export default function Details_cart() {
       <br />
       {online ?  <Paypal amount={totalPrice.toFixed(2)} /> : 
       <>
-      <p style={{margin:'auto'}}>Pour passer commande</p>
+      <p style={{margin:'auto'}}>Si vous souhaitez passer commande : </p>
       <Link href="/connexion" ><button className={styles.connect}> Connectez-vous !</button></Link></>}
      
     </div>

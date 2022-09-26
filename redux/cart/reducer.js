@@ -32,24 +32,7 @@ const cartReducer = (state = initState, action) => {
           cart: [...state?.cart, payload],
         };
       }
-    // case UPDATE_QUANTITY:
-    //   const findEl = state.cart.find((el) => el?._id === payload?._id);
-    //   const newEl = {
-    //     ...findEl,
-    //     quantity: payload?.quantity,
-    //   };
-    //   console.log(
-    //     "🚀 ~ file: reducer.js ~ line 42 ~ cartReducer ~ payload",
-    //     payload
-    //   );
-    //   const filteredCart = state.cart.filter((el) => el?._id !== newEl?._id);
-    //   return {
-    //     cart: [...filteredCart, newEl],
-    //   };
-    // case GET_CART:
-    //   return {
-    //     cart: payload,
-    //   };
+
     case UPDATE_QUANTITY:
       const indexEl = state.cart.findIndex((el) => el.name === payload?.name);
       state.cart[indexEl].quantity = state.cart[indexEl].quantity + 1;
