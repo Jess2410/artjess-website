@@ -50,45 +50,45 @@ export default function Contact() {
   return (
       <div className={styles.wrapper}>
       <div className="line"></div>
-    <section className={styles.contact} id="contact">
-    <div className={styles.content}>
-        
-        <div className={styles.contactForm}>
-            <form onSubmit={handleCreateMessage}>
-                <div className={styles.row100}>
-                    <div className={styles.inputBx50}>
-                        <input type="text" name="lastname" placeholder="Last Name" onChange={handleChange}
-                        value={message?.lastname}/>
-                    </div>
-                    <div className={styles.inputBx50}>
-                        <input type="text" name="firstname" placeholder="First Name" onChange={handleChange}
-                        value={message?.firstname}/>
-                    </div>
-                </div>
-                <div className={styles.row100}>
-                    <div className={styles.inputBx100}>
-                    <input type="email" name="email" placeholder="Email Address" onChange={handleChange}
-                        value={message?.email}/>
-                    </div>
-                </div>
-                <div className={styles.row100}>
-                    <div className={styles.inputBx100}>
-                        <textarea placeholder="Message" name="message"
-                        onChange={handleChange}
-                        value={message?.message}
-                        ></textarea>
-                    </div>
-                </div>
-                <div className={styles.row100}>
-                    <div className={styles.inputBx100 }>
-                            <button className={styles.center} type="submit" >SEND</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>                  
-</section> 
-    
-</div>
+      <section className={styles.contact} id="contact">
+      <div className={styles.content}>
+          
+          <div className={styles.contactForm}>
+              <form onSubmit={handleCreateMessage}>
+                  <div className={styles.row100}>
+                      <div className={styles.inputBx50}>
+                          <input type="text" name="lastname" placeholder="Last Name" onChange={handleChange}
+                          value={message?.lastname}/>
+                      </div>
+                      <div className={styles.inputBx50}>
+                          <input type="text" name="firstname" placeholder="First Name" onChange={handleChange}
+                          value={message?.firstname}/>
+                      </div>
+                  </div>
+                  <div className={styles.row100}>
+                      <div className={styles.inputBx100}>
+                      <input type="email" name="email" placeholder="Email Address" onChange={handleChange}
+                          value={message?.email}/>
+                      </div>
+                  </div>
+                  <div className={styles.row100}>
+                      <div className={styles.inputBx100}>
+                          <textarea placeholder="Message" name="message"
+                          onChange={handleChange}
+                          value={message?.message}
+                          ></textarea>
+                      </div>
+                  </div>
+                  <div className={styles.row100}>
+                      <div className={styles.inputBx100 }>
+                              <button className={styles.center} type="submit" >SEND</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>                  
+  </section> 
+      
+  </div>
   )
 }

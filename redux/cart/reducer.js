@@ -47,34 +47,10 @@ const cartReducer = (state = initState, action) => {
       return {
         cart: [...state.cart],
       };
-    // case UPDATE_QUANTITY_MOINS:
-    //   const indexEl2 = state.cart.findIndex((el) => el.name === payload?.name);
-    //   state.cart[indexEl2].quantity = state.cart[indexEl2].quantity;
-
-    //   return {
-    //     cart: [...state.cart],
-    //   };
     case GET_CART:
       return {
         cart: payload,
       };
-    // case UPDATE_ITEM:
-    //   const itemQuantAmodifier = state.cart.find(
-    //     (el) => el?._id === payload?._id
-    //   );
-    //   console.log(
-    //     "🚀 ~ file: reducer.js ~ line 41 ~ cartReducer ~ itemModifié",
-    //     itemQuantAmodifier
-    //   );
-    //   return {
-    //     cart: [...state.cart, payload],
-    //   };
-    // const newArr = [...state.cart];
-    // newArr.splice(indexItemUpdate, 1, payload);
-
-    // return {
-    //   cart: newArr,
-    // };
 
     case CART_REMOVE_ITEM:
       const deletedItem = state.cart.find((el) => el?._id === payload?._id);

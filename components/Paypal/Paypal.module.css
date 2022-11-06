@@ -2,4 +2,24 @@
     font-family: sans-serif;
     text-align: center;
   }
+
+  .flex{
+    display: flex;
+    width: 600px;
+    margin: auto;
+    /* justify-content: center; */
+}
+.button{
+    background: #fff;
+    color: #000;
+    max-width: 250px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: block;
+    margin: 15px auto;
+    padding: 5px 15px;
+    border: #DA727B 2px solid !important;
+}
   

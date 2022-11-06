@@ -11,15 +11,6 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.sci}>
       {/* <p className={styles.footer}>2022 - Jess&copy;</p> */}
-      <ul className={styles.center}>
-        <li>
-                <Link href="#">
-                    <a> 
-                    Jess&copy; - 2022 
-                    </a>
-                </Link>
-            </li>
-        </ul>
         <ul className={styles.center}>
             <li>
                 <Link href="#">
@@ -44,6 +35,15 @@ export default function Footer() {
             </li>
   
         </ul>
+        <ul className={styles.center}>
+            <li>
+                    <Link href="#">
+                        <a> 
+                        Jess&copy; - 2022 
+                        </a>
+                    </Link>
+                </li>
+            </ul>
       </div>
     </footer>
   )

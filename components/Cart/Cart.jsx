@@ -39,10 +39,10 @@ export default function Cart() {
                         </a>
                     </Link>
                     :
-                    <Link href="/details_order">
+                    <Link href="/order">
                         <a>
                           
-                            <button className={styles.link}>Passer la commande</button>
+                            <button className={styles.link}>Passer au paiement</button>
                             <p>{cart?.length} article(s)</p>
                         </a>
                     </Link>}

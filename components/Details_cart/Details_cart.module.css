@@ -94,3 +94,18 @@ text-align: right;
         margin: auto;
         display: block;
 }
+
+.button{
+    background: #fff;
+    color: #000;
+    max-width: 250px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: block;
+    margin: 15px auto;
+    margin-right: 0 !important;
+    padding: 5px 15px;
+    border: #DA727B 2px solid !important;
+}

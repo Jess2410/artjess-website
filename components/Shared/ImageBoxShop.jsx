@@ -14,7 +14,7 @@ const router = useRouter()
          <Image width={280} height={280} src={`${BASE_URI}/file/images-store/${product.image}`} alt={product.image} /> 
       </div>
         <h2 className={styles.title}>{product?.name}</h2>
-        <h3 className={styles.price}>$ {product?.price}</h3>
+        <h3 className={styles.price}>€ {product?.price}</h3>
         <button className={styles.center} onClick={()=>router.push(`/products/${product?._id}`)}>Voir</button>
     </div>
   );

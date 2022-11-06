@@ -58,9 +58,10 @@ function Button({amount}) {
       return actions.order.capture({}).then((details) => {
 
           const name = details.payer.name.given_name;
-          window.location.replace("/success_page");
+          // window.location.replace("/success_page");
+          window.location.replace("/addressDelivery");
           alert(`Thank you so much for your order :  ${name}`);
-          localStorage.clear();
+          localStorage.removeItem("cart-infos");
 
         // alert(
         //   "Transaction completed by" +

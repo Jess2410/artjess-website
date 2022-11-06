@@ -14,9 +14,9 @@
     position : relative;
     max-width: 800px;
     margin: 0 auto;
-    display: flex;
+    /* display: flex; */
     background: #DA727B;
-    padding: 100px 100px;
+    padding: 20px 100px;
     border-radius: 10px;
 }
 .contactForm form{
@@ -38,7 +38,7 @@
 .contactForm .row100 textarea{
     position : relative;
     border: none;
-    border-bottom: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid #fff;
     color : #fff;
     background: transparent;
     width: 100%;
@@ -49,6 +49,22 @@
     margin : 20px 0;
     resize: none;
 }
+
+.inputBx100Input{
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #DA727B;
+    background: #DA727B !important;
+}
+.inputBx50Input{
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #DA727B;
+    background: #DA727B !important;
+}
+
 
 .contactForm .row100 textarea{
     height: 100px;
@@ -79,6 +95,27 @@
     margin: 15px auto;
     padding: 5px 15px;
 }
+.flex{
+    display: flex;
+    width: 600px;
+    margin: auto;
+    /* justify-content: center; */
+}
+.button{
+    background: #fff;
+    color: #000;
+    max-width: 250px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: block;
+    margin: 15px auto;
+    padding: 5px 15px;
+    border: #DA727B 2px solid !important;
+}
+
+
 /* .wrapper{
     min-height : calc(100vh - 7vh)
 } */

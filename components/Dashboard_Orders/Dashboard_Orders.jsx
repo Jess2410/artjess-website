@@ -73,7 +73,7 @@ export default function Dashboard_Orders() {
                 </tr>
               </thead>
               <tbody>
-          {messages.map((message) => (
+          {/* {messages.map((message) => (
             
             <tr className={styles.tr} key={message._id}>
               <td className={styles.td_left}>{message.lastname}</td>
@@ -88,7 +88,7 @@ export default function Dashboard_Orders() {
                 </button>
               </td>
             </tr>
-            ))}
+            ))} */}
               </tbody>
             </table>
         </div>

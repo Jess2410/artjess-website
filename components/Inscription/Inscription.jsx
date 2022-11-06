@@ -14,6 +14,15 @@ const initCustomer = {
   zipCode: "",
   city: "",
   password: "",
+  deliveryAddress: {
+    lastnameDelivery: "",
+    firstnameDelivery: "",
+    addressDelivery: "",
+    zipCodeDelivery: "",
+    cityDelivery: "",
+    countryDelivery: "",
+    informationsDelivery: ""
+  }
 };
 
 export default function Inscription() {
@@ -22,8 +31,9 @@ export default function Inscription() {
   const [loading, setLoading] = useState(false);
   const [customer, setCustomer] = useState(initCustomer);
 
-  const handleChange = (e) => {
+  const handleChange = (e, isDeliveryItem=false) => {
     const { name, value } = e.target;
+    if(isDeliveryItem) return setCustomer((s) => ({ ...s, deliveryAddress: {...s.deliveryAddress, [name]: value}  }));
     setCustomer({ ...customer, [name]: value });
   };
  
@@ -67,6 +77,7 @@ export default function Inscription() {
         <div className={styles.content}>
           <div className={styles.contactForm}>
             <div>
+          <p>Client Informations</p>
               <div className={styles.row100}>
                 <div className={styles.inputBx50}>
                   <input
@@ -164,6 +175,85 @@ export default function Inscription() {
                   </span>
                 </div>
               </div>
+              <p>Delivery Address</p>
+              <div>
+              <div className={styles.row100}>
+                <div className={styles.inputBx50}>
+                  <input
+                    type='text'
+                    name='lastnameDelivery'
+                    placeholder='Last Name'
+                    onChange={e => handleChange(e, true)}
+                    value={customer?.deliveryAddress.lastnameDelivery}
+                  />
+                </div>
+                <div className={styles.inputBx50}>
+                  <input
+                    type='text'
+                    name='firstnameDelivery'
+                    placeholder='First Name'
+                    onChange={e => handleChange(e, true)}
+                    value={customer?.deliveryAddress.firstnameDelivery}
+                  />
+                </div>
+              </div>
+              <div className={styles.row100}>
+                <div className={styles.inputBx100}>
+                  <input
+                    className={styles.inputBx50Input}
+                    type='text'
+                    name='addressDelivery'
+                    placeholder='Address'
+                    onChange={e => handleChange(e, true)}
+                    value={customer?.deliveryAddress?.addressDelivery}
+                  />
+                </div>
+              </div>
+              <div className={styles.row100}>
+                <div className={styles.inputBx50}>
+                  <input
+                    className={styles.inputBx50Input}
+                    type='text'
+                    name='zipCodeDelivery'
+                    placeholder='Zip Code'
+                    onChange={e => handleChange(e, true)}
+                    value={customer?.deliveryAddress?.zipCodeDelivery}
+                  />
+                </div>
+                <div className={styles.inputBx50}>
+                  <input
+                    className={styles.inputBx50Input}
+                    type='text'
+                    name='cityDelivery'
+                    placeholder='City'
+                    onChange={e => handleChange(e, true)}
+                    value={customer?.deliveryAddress?.cityDelivery}
+                  />
+                </div>
+              </div>
+              <div className={styles.row100}>
+                <div className={styles.inputBx50}>
+                  <input
+                    type='text'
+                    name='countryDelivery'
+                    placeholder='Country'
+                    onChange={e => handleChange(e, true)}
+                    value={customer?.deliveryAddress?.countryDelivery}
+                  />
+                </div>
+                <div className={styles.inputBx50}>
+                  <input
+                    type='text'
+                    name='informationsDelivery'
+                    placeholder='Additional Informations'
+                    onChange={e => handleChange(e, true)}
+                    value={customer?.deliveryAddress?.informationsDelivery}
+                  />
+                </div>
+              </div>
+
+            </div>
+
               <div className={styles.row100}>
                 <button
                   className={styles.center}

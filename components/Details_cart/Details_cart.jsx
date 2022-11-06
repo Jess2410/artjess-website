@@ -8,7 +8,7 @@ import { BASE_URI } from '../../public/assets/app.config';
 import Paypal from "../Paypal/Paypal";
 import Link from "next/link";
 
-export default function Details_cart() {
+export default function Details_cart({setSteps }) {
   const { cart } = useSelector((s) => s.cartReducer);
   const [products, setProducts] = useState([]);
   const [artSelected, setArtSelected] = useState(null);
@@ -107,10 +107,11 @@ export default function Details_cart() {
       <br />
       <p className={styles.total_price}>Total : {`${totalPrice.toFixed(2)}€`}</p>
       <br />
-      {online ?  <Paypal amount={totalPrice.toFixed(2)} /> : 
-      <>
+      {online ? <button className={styles.button} onClick={() => setSteps("delivery")}>Next</button> : <>
       <p style={{margin:'auto'}}>Si vous souhaitez passer commande : </p>
       <Link href="/connexion" ><button className={styles.connect}> Connectez-vous !</button></Link></>}
+      {/* {online ?  <Paypal amount={totalPrice.toFixed(2)} /> : 
+      } */}
      
     </div>
   );
